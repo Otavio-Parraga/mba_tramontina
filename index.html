@@ -165,6 +165,16 @@
   }
   .panel-note{padding:14px 24px;background:#f6f4ef;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
   .panel-note code{font-family:'JetBrains Mono';font-size:11.5px;background:#ece8df;padding:1px 6px;border-radius:5px;color:var(--navy)}
+  /* notebook row with two actions (Colab + download) */
+  .res.row2{padding:15px 24px;gap:14px}
+  .res.row2 > span:first-child{flex:1}
+  .res-actions{display:flex;align-items:center;gap:8px;flex:none}
+  .act{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;text-decoration:none;border-radius:8px;padding:7px 11px;transition:all .14s;white-space:nowrap}
+  .act.colab{background:#fff3e0;color:#b96a00;border:1px solid #f6d9ad}
+  .act.colab:hover{background:#ffe9c9}
+  .act.dl-csv{background:#eef3f7;color:var(--navy-soft);border:1px solid #dde7ee}
+  .act.dl-csv:hover{background:#e3ebf2}
+  .act svg{flex:none}
 
   /* ---------- orange how-to ---------- */
   .howto{
@@ -394,24 +404,31 @@
         </div>
       </div>
       <ul class="reslist">
-        <li><a class="res" href="Notebooks/01_Analise_e_Processamento_de_Dados.ipynb" download>
+        <li><div class="res row2">
           <span>
             <span class="name">01 · Análise e processamento de dados</span>
             <span class="desc">Exploração, limpeza, transformação e amostragem — Dia 1</span>
           </span>
-          <span class="file">.ipynb</span>
-          <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        </a></li>
-        <li><a class="res" href="Notebooks/02_Treinamento_de_Modelos.ipynb" download>
+          <span class="res-actions">
+            <a class="act colab" href="https://colab.research.google.com/drive/1VN_dcSAuA8o_PLsRbd0KiPgHHnTI6NWN?usp=sharing" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Colab
+            </a>
+            <a class="act dl-csv" href="Notebooks/01_Analise_e_Processamento_de_Dados.ipynb" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              .ipynb
+            </a>
+          </span>
+        </div></li>
+        <li><div class="res pending">
           <span>
             <span class="name">02 · Treinamento de modelos</span>
             <span class="desc">Classificação, avaliação (ROC, métricas) e clustering — Dia 2</span>
           </span>
-          <span class="file">.ipynb</span>
-          <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        </a></li>
+          <span class="badge-soon">a publicar</span>
+        </div></li>
       </ul>
-      <div class="panel-note">Notebooks Jupyter na pasta <code>Notebooks/</code>. Abra com Jupyter, VS Code ou Google Colab; os dados estão em <code>Dados/</code>.</div>
+      <div class="panel-note">Abra direto no <b>Google Colab</b> (sem instalar nada) ou baixe o <code>.ipynb</code> para rodar no Jupyter/VS Code. Os dados estão em <code>Dados/</code>.</div>
     </div>
 
     <!-- ROTEIROS -->
