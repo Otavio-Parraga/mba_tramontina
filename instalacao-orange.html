@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalando o Orange Data Mining — Manual de instalação</title>
+<meta name="description" content="Manual de instalação do Orange Data Mining: download, instalação e primeiros passos no Windows e no macOS, incluindo o widget File.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2942;
+    --navy-deep:#0a1f33;
+    --navy-soft:#163a5c;
+    --gold:#c8851f;
+    --gold-soft:#e0a040;
+    --ink:#0f2942;
+    --paper:#fbfaf7;
+    --paper-card:#ffffff;
+    --line:#e4e0d6;
+    --muted:#5d6b7a;
+    --muted-soft:#8a96a3;
+    --green:#2f8f6f;
+    --radius:14px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,250,247,.86);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:.01em;color:var(--navy)}
+  .brand span{color:var(--gold)}
+  .topnav{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--muted)}
+  .topnav a{text-decoration:none;transition:color .15s}
+  .topnav a:hover{color:var(--navy)}
+  .topnav a.back{display:flex;align-items:center;gap:6px;color:var(--gold)}
+  @media(max-width:680px){.topnav a:not(.back){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    padding:72px 0 80px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(200,133,31,.30) 1.4px, transparent 1.6px);
+    background-size:34px 34px;
+    -webkit-mask-image:linear-gradient(115deg, transparent 38%, #000 100%);
+    mask-image:linear-gradient(115deg, transparent 38%, #000 100%);
+    opacity:.55;
+  }
+  .hero .wrap{position:relative}
+  .eyebrow{
+    font-family:'JetBrains Mono';font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px;
+  }
+  .hero h1{
+    font-family:'Space Grotesk';font-weight:700;
+    font-size:clamp(34px,5.6vw,58px);line-height:1.04;letter-spacing:-.02em;
+    max-width:16ch;margin-bottom:20px;
+  }
+  .hero h1 .amp{color:var(--gold)}
+  .hero .lede{
+    font-size:clamp(16px,2.2vw,19px);color:#c4d2de;max-width:56ch;margin-bottom:30px;
+  }
+  .gold-rule{width:54px;height:4px;background:var(--gold);border-radius:2px;margin-bottom:26px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-cta a{
+    display:flex;align-items:center;gap:10px;text-decoration:none;
+    background:var(--gold);color:var(--navy);border-radius:10px;padding:13px 20px;
+    font-weight:700;font-size:14.5px;transition:transform .15s, background .15s;
+  }
+  .hero-cta a:hover{transform:translateY(-2px);background:var(--gold-soft)}
+  .hero-cta a.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.28)}
+  .hero-cta a.ghost:hover{background:rgba(255,255,255,.08)}
+
+  /* ---------- section frame ---------- */
+  section{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  .sec-kicker{
+    font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px;
+  }
+  .sec-head h2{
+    font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.6vw,34px);
+    letter-spacing:-.01em;color:var(--navy);
+  }
+  .sec-head p{color:var(--muted);max-width:62ch;margin-top:10px;font-size:15.5px}
+
+  /* ---------- OS tabs / platform cards ---------- */
+  .platforms{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.platforms{grid-template-columns:1fr}}
+  .pcard{
+    background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .pcard-head{
+    padding:22px 26px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:14px;background:#f6f4ef;
+  }
+  .pcard-head .os{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none;background:var(--navy);color:#fff}
+  .pcard-head h3{font-family:'Space Grotesk';font-weight:700;font-size:19px;color:var(--navy)}
+  .pcard-head .sub{font-size:12.5px;color:var(--muted-soft);margin-top:1px}
+  .steps{list-style:none;counter-reset:step;padding:8px 0}
+  .steps li{
+    display:flex;gap:16px;padding:16px 26px;border-bottom:1px solid var(--line);
+    counter-increment:step;
+  }
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{
+    content:counter(step);flex:none;
+    width:28px;height:28px;border-radius:50%;
+    background:var(--gold);color:var(--navy);
+    font-family:'Space Grotesk';font-weight:700;font-size:14px;
+    display:grid;place-items:center;
+  }
+  .steps .s-body{font-size:14.5px;color:var(--ink)}
+  .steps .s-body b{font-weight:700;color:var(--navy)}
+  .steps .s-body .note{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+  .steps code,.howto code,.tips code,.faq code{
+    font-family:'JetBrains Mono';font-size:.85em;background:#ece8df;
+    padding:1px 6px;border-radius:5px;color:var(--navy);
+  }
+  .pcard .pfoot{
+    margin-top:auto;padding:16px 26px;background:#f6f4ef;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);
+  }
+  .alt{margin:6px 18px 4px;background:#fbf0db;border:1px solid #ecd9ad;border-radius:11px;padding:16px 18px 8px}
+  .alt-tag{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:8px;
+  }
+  .alt-intro{font-size:13px;color:var(--ink);margin-bottom:4px}
+  .alt-intro b{color:var(--navy);font-weight:700}
+  .steps-alt{counter-reset:step;padding:4px 0 0}
+  .steps-alt li{padding:11px 0;border-bottom:1px dashed #ecd9ad}
+  .steps-alt li:last-child{border-bottom:0}
+
+  /* ---------- generic mockup frame ---------- */
+  .shot{margin:0 0 6px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 14px 34px -26px rgba(15,41,66,.5)}
+  .shot .bar{display:flex;align-items:center;gap:7px;padding:9px 14px;background:#eef0f2;border-bottom:1px solid #e0e2e6}
+  .shot .bar .dot{width:11px;height:11px;border-radius:50%;background:#cfd4da}
+  .shot .bar .dot.r{background:#ec6a5e}.shot .bar .dot.y{background:#f4be4f}.shot .bar .dot.g{background:#61c554}
+  .shot .bar .url{margin-left:10px;font-family:'JetBrains Mono';font-size:11px;color:var(--muted-soft);background:#fff;border:1px solid #e0e2e6;border-radius:6px;padding:3px 10px}
+  .shot .canvas{padding:18px}
+  .cap{font-size:12.5px;color:var(--muted-soft);font-family:'JetBrains Mono';margin-bottom:26px}
+
+  /* download page mock */
+  .dlmock{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;padding:8px 0 4px}
+  .dlmock .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:17px;color:var(--navy)}
+  .dlmock .logo i{width:26px;height:26px;border-radius:7px;background:var(--gold);display:inline-grid;place-items:center;color:#fff;font-style:normal;font-weight:700}
+  .dlbtns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .dlbtn{
+    display:flex;align-items:center;gap:9px;padding:11px 18px;border-radius:10px;
+    border:1px solid var(--line);background:#fff;font-weight:600;font-size:13.5px;color:var(--navy);
+  }
+  .dlbtn.on{background:var(--navy);color:#fff;border-color:var(--navy);position:relative}
+  .dlbtn.on::after{
+    content:"clique aqui";position:absolute;top:-30px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--navy);font-family:'JetBrains Mono';font-size:10px;font-weight:600;
+    padding:3px 8px;border-radius:6px;white-space:nowrap;
+  }
+  .dlbtn.on::before{
+    content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+    border:5px solid transparent;border-top-color:var(--gold);
+  }
+
+  /* orange canvas mock */
+  .owmock{display:flex;gap:0;min-height:190px}
+  .owmock .toolbox{width:118px;border-right:1px solid var(--line);background:#f6f4ef;padding:10px 8px;display:flex;flex-direction:column;gap:6px}
+  .owmock .tb-cat{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-soft);margin:4px 2px 2px}
+  .owmock .tb-w{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 7px}
+  .owmock .tb-w .ic{width:14px;height:14px;border-radius:50%;flex:none}
+  .owmock .stage{flex:1;position:relative;background:
+    radial-gradient(circle, #e7e3d9 1px, transparent 1.4px);background-size:18px 18px;background-color:#fff}
+  .wnode{position:absolute;display:flex;flex-direction:column;align-items:center;gap:5px;width:84px}
+  .wnode .disc{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 16px -8px rgba(15,41,66,.5)}
+  .wnode .lbl{font-size:11px;font-weight:600;color:var(--navy);text-align:center;line-height:1.2}
+  .wnode .disc.file{background:#fff;border:2.5px solid var(--gold)}
+  .wnode .disc.table{background:#fff;border:2.5px solid var(--navy-soft)}
+  .wlink{position:absolute;height:2.5px;background:var(--muted-soft);border-radius:2px}
+  .pulse{position:absolute;width:54px;height:54px;border-radius:50%;border:2px dashed var(--gold);animation:pulse 1.8s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+
+  /* File widget dialog mock */
+  .fwmock{max-width:430px;margin:0 auto;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .fwmock .tt{background:#eef0f2;padding:9px 14px;font-weight:700;font-size:12.5px;color:var(--navy);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+  .fwmock .row{display:flex;align-items:center;gap:10px;padding:14px 16px}
+  .fwmock .radio{width:14px;height:14px;border-radius:50%;border:2px solid var(--gold);flex:none;position:relative}
+  .fwmock .radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--gold)}
+  .fwmock .field{flex:1;border:1px solid var(--line);border-radius:7px;padding:7px 10px;font-family:'JetBrains Mono';font-size:11px;color:var(--muted)}
+  .fwmock .btn{background:var(--navy);color:#fff;border-radius:7px;padding:7px 13px;font-size:12px;font-weight:600;flex:none}
+  .fwmock .btn.gold{background:var(--gold);color:var(--navy)}
+  .fwmock .preview{border-top:1px solid var(--line);padding:10px 16px;background:#f6f4ef;font-family:'JetBrains Mono';font-size:10.5px;color:var(--muted)}
+
+  /* ---------- step-photo blocks ---------- */
+  .flow{display:grid;gap:34px}
+  .flowrow{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .flowrow.rev{direction:rtl}.flowrow.rev>*{direction:ltr}
+  @media(max-width:760px){.flowrow,.flowrow.rev{grid-template-columns:1fr;direction:ltr}}
+  .flowrow .txt .n{font-family:'JetBrains Mono';font-size:12px;color:var(--gold);font-weight:500;margin-bottom:6px}
+  .flowrow .txt h4{font-family:'Space Grotesk';font-weight:700;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .flowrow .txt p{font-size:14.5px;color:var(--muted)}
+  .flowrow .txt p b{color:var(--navy)}
+
+  /* ---------- tips / faq ---------- */
+  .tips{background:var(--navy);color:#fff;border-radius:var(--radius);padding:28px 30px}
+  .tips h3{font-family:'Space Grotesk';font-size:18px;color:var(--gold-soft);margin-bottom:14px}
+  .tips ul{list-style:none;display:grid;gap:12px}
+  .tips li{display:flex;gap:12px;font-size:14px;color:#cdd9e3}
+  .tips li svg{flex:none;color:var(--gold);margin-top:3px}
+  .tips code{background:rgba(255,255,255,.12);color:#fff}
+
+  .faq{display:grid;gap:14px}
+  .qa{background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px}
+  .qa h4{font-family:'Space Grotesk';font-weight:700;font-size:15.5px;color:var(--navy);margin-bottom:6px;display:flex;gap:9px;align-items:flex-start}
+  .qa h4 .q{color:var(--gold);font-weight:700}
+  .qa p{font-size:14px;color:var(--muted)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-deep);color:#9fb2c2;padding:48px 0 40px;font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+  footer .fbrand{font-family:'Space Grotesk';font-weight:700;font-size:16px;color:#fff;margin-bottom:6px}
+  footer a{color:var(--gold-soft);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Data Mining <span>·</span> ML</div>
+    <nav class="topnav">
+      <a href="#download">Download</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#abrir">Primeiros passos</a>
+      <a href="#file">Widget File</a>
+      <a class="back" href="index.html">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Voltar
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="gold-rule"></div>
+    <div class="eyebrow">Manual de instalação</div>
+    <h1>Instalando o <span class="amp">Orange Data Mining</span></h1>
+    <p class="lede">Passo a passo para baixar, instalar e abrir sua primeira base de dados — no <b>Windows</b> e no <b>macOS</b>. Tudo é gratuito e não exige conhecimento de programação.</p>
+    <div class="hero-cta">
+      <a href="https://orangedatamining.com/download/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Ir para a página de download
+      </a>
+      <a class="ghost" href="#download">Ver o passo a passo</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ DOWNLOAD ============ -->
+<section id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Passo 1 · onde baixar</div>
+      <h2>Baixe o instalador no site oficial</h2>
+      <p>Acesse <a href="https://orangedatamining.com/download/" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600">orangedatamining.com/download</a>. O site detecta seu sistema automaticamente, mas você também pode escolher manualmente entre <b>Windows</b> e <b>macOS</b>.</p>
+    </div>
+
+    <figure class="shot">
+      <div class="bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="url">https://orangedatamining.com/download</span>
+      </div>
+      <div class="canvas">
+        <div class="dlmock">
+          <div class="logo"><i>🍊</i> Orange Data Mining</div>
+          <div style="font-size:13px;color:var(--muted)">Escolha seu sistema operacional e clique no botão de download</div>
+          <div class="dlbtns">
+            <span class="dlbtn on">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10 4.4v7.1H3zM11 4.2 21 3v8.5H11zM3 12.5h7v7.1L3 18.6zM11 12.5h10V21l-10-1.2z"/></svg>
+              Download for Windows
+            </span>
+            <span class="dlbtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1 2.8-2.1c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.9zM14 5.4c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.7-1.2z"/></svg>
+              Download for macOS
+            </span>
+          </div>
+        </div>
+      </div>
+    </figure>
+    <p class="cap">↑ A página de download. Use o botão correspondente ao seu sistema.</p>
+
+    <div class="platforms">
+      <!-- WINDOWS -->
+      <div class="pcard" id="win">
+        <div class="pcard-head">
+          <span class="os">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10 4.4v7.1H3zM11 4.2 21 3v8.5H11zM3 12.5h7v7.1L3 18.6zM11 12.5h10V21l-10-1.2z"/></svg>
+          </span>
+          <div>
+            <h3>Windows</h3>
+            <div class="sub">Windows 10 ou 11 · 64 bits</div>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><span class="s-body"><b>Clique em “Download for Windows”.</b><span class="note">Começa a baixar um arquivo <code>Orange3-x.x.x-...exe</code> (instalador).</span></span></li>
+          <li><span class="s-body"><b>Abra o arquivo baixado</b> (pasta <i>Downloads</i>, dê duplo clique).<span class="note">Se o Windows mostrar um aviso de segurança, clique em <b>“Mais informações” → “Executar assim mesmo”</b>.</span></span></li>
+          <li><span class="s-body"><b>Avance no instalador</b> clicando em <i>Next</i> e aceite os termos.<span class="note">Pode manter todas as opções padrão.</span></span></li>
+          <li><span class="s-body"><b>Clique em <i>Install</i></b> e aguarde a barra concluir.<span class="note">A instalação leva alguns minutos.</span></span></li>
+          <li><span class="s-body"><b>Clique em <i>Finish</i>.</b><span class="note">Um atalho <b>Orange</b> aparece no Menu Iniciar e na Área de Trabalho.</span></span></li>
+        </ol>
+
+        <div class="alt">
+          <div class="alt-tag">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M2 20h20"/><path d="M9 9h6"/></svg>
+            Alternativa · versão portable
+          </div>
+          <p class="alt-intro">Não tem permissão de administrador (computador da empresa/laboratório) ou prefere rodar de um pen drive? Use a versão <b>portable</b>, que não exige instalação.</p>
+          <ol class="steps steps-alt">
+            <li><span class="s-body">Na página de download, escolha a opção <b>“Portable orange”</b> (ou <i>Standalone / Portable</i>) em vez do instalador.<span class="note">Baixa um arquivo <code>.zip</code>.</span></span></li>
+            <li><span class="s-body"><b>Extraia o <code>.zip</code></b> para uma pasta de sua escolha (ex.: Área de Trabalho ou um pen drive).<span class="note">Botão direito no arquivo → <i>Extrair tudo</i>.</span></span></li>
+            <li><span class="s-body">Abra a pasta extraída e dê <b>duplo clique em <code>Orange.exe</code></b>.<span class="note">O Orange abre direto, sem instalar nada no sistema.</span></span></li>
+          </ol>
+        </div>
+
+        <div class="pfoot">Instalador: ~250 MB. Não precisa instalar Python à parte — já vem incluído. A versão portable não cria atalhos e não escreve no registro do Windows.</div>
+      </div>
+
+      <!-- MAC -->
+      <div class="pcard" id="mac">
+        <div class="pcard-head">
+          <span class="os">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1 2.8-2.1c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.9zM14 5.4c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.7-1.2z"/></svg>
+          </span>
+          <div>
+            <h3>macOS</h3>
+            <div class="sub">Intel e Apple Silicon (M1/M2/M3)</div>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><span class="s-body"><b>Clique em “Download for macOS”.</b><span class="note">Baixa um arquivo <code>Orange3-x.x.x.dmg</code>.</span></span></li>
+          <li><span class="s-body"><b>Dê duplo clique no <code>.dmg</code></b> baixado.<span class="note">Abre uma janela com o ícone do Orange e a pasta <i>Applications</i>.</span></span></li>
+          <li><span class="s-body"><b>Arraste o ícone do <i>Orange</i> para a pasta <i>Applications</i>.</b><span class="note">É assim que o app é instalado no Mac.</span></span></li>
+          <li><span class="s-body"><b>Abra o <i>Launchpad</i> (ou pasta Aplicativos) e clique em Orange.</b></span></li>
+          <li><span class="s-body">Se aparecer <b>“não é possível abrir, desenvolvedor não identificado”</b>:<span class="note">Clique com o <b>botão direito</b> no ícone → <b>Abrir</b> → <b>Abrir</b>. Ou: <i>Ajustes do Sistema → Privacidade e Segurança → “Abrir Assim Mesmo”</i>.</span></span></li>
+        </ol>
+        <div class="pfoot">Tamanho: ~250 MB. Só é preciso liberar a abertura uma vez.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABRIR / PRIMEIROS PASSOS ============ -->
+<section id="abrir" style="background:#f3f0e9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Passo 2 · rodando pela primeira vez</div>
+      <h2>Abrindo o Orange</h2>
+      <p>Ao abrir, o Orange mostra uma tela de boas-vindas. Feche-a (ou clique em <i>New</i>) para chegar ao <b>Canvas</b> — a área em branco onde você monta o fluxo. À esquerda fica a <b>caixa de widgets</b>.</p>
+    </div>
+
+    <figure class="shot">
+      <div class="bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="url" style="margin-left:auto">Orange — Canvas</span>
+      </div>
+      <div class="canvas" style="padding:0">
+        <div class="owmock">
+          <div class="toolbox">
+            <div class="tb-cat">Data</div>
+            <div class="tb-w"><span class="ic" style="background:var(--gold)"></span> File</div>
+            <div class="tb-w"><span class="ic" style="background:var(--navy-soft)"></span> Data Table</div>
+            <div class="tb-w"><span class="ic" style="background:var(--green)"></span> Datasets</div>
+            <div class="tb-cat">Visualize</div>
+            <div class="tb-w"><span class="ic" style="background:#5a5fc0"></span> Distributions</div>
+            <div class="tb-w"><span class="ic" style="background:#b3791f"></span> Scatter Plot</div>
+          </div>
+          <div class="stage">
+            <div class="wnode" style="left:60px;top:60px">
+              <div class="disc file"><span style="font-size:22px">📄</span><span class="pulse"></span></div>
+              <span class="lbl">File</span>
+            </div>
+            <div class="wlink" style="left:128px;top:84px;width:90px"></div>
+            <div class="wnode" style="left:218px;top:60px">
+              <div class="disc table"><span style="font-size:22px">▦</span></div>
+              <span class="lbl">Data Table</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </figure>
+    <p class="cap">↑ O Canvas com um fluxo simples: <b>File → Data Table</b>. Para adicionar um widget, arraste-o da caixa à esquerda ou dê duplo clique no Canvas e procure pelo nome.</p>
+
+    <div class="tips">
+      <h3>Para começar do zero</h3>
+      <ul>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Arraste o widget <b>File</b> (categoria <i>Data</i>) para o Canvas em branco.
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Para abrir um workflow pronto (<code>.ows</code>): menu <b>File → Open</b> e selecione o arquivo.
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Ligue dois widgets clicando na borda de um e arrastando a linha até o outro.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILE WIDGET ============ -->
+<section id="file">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Passo 3 · carregando dados</div>
+      <h2>Carregando um arquivo com o widget <i>File</i></h2>
+      <p>O widget <b>File</b> é a porta de entrada dos dados. É por ele que você abre os arquivos <code>.csv</code> ou <code>.xlsx</code> usados nas práticas.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flowrow">
+        <div class="txt">
+          <div class="n">3.1</div>
+          <h4>Abra o widget</h4>
+          <p>Dê <b>duplo clique</b> no widget <b>File</b> que está no Canvas. Abre a janela de configuração mostrada ao lado.</p>
+        </div>
+        <figure class="shot" style="margin:0">
+          <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url" style="margin-left:auto">File</span></div>
+          <div class="canvas">
+            <div class="fwmock">
+              <div class="tt">📄 File</div>
+              <div class="row">
+                <span class="radio"></span>
+                <span style="font-size:12.5px;color:var(--navy);font-weight:600">File</span>
+                <span class="field">…/Dados/tramontina_clientes.csv</span>
+                <span class="btn gold">…</span>
+              </div>
+              <div class="preview">3 000 instâncias · 12 atributos · alvo: churn</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="flowrow rev">
+        <div class="txt">
+          <div class="n">3.2</div>
+          <h4>Selecione o arquivo</h4>
+          <p>Com a opção <b>“File”</b> marcada, clique no botão <b>“…”</b> (ou na pasta) e localize o arquivo no seu computador. Selecione o <code>.csv</code> baixado e clique em <b>Abrir</b>.</p>
+        </div>
+        <figure class="shot" style="margin:0">
+          <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url" style="margin-left:auto">Selecionar arquivo</span></div>
+          <div class="canvas" style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">
+            <div style="border:1px solid var(--line);border-radius:8px;overflow:hidden">
+              <div style="background:#eef0f2;padding:8px 12px;color:var(--navy);font-weight:700">📂 Dados</div>
+              <div style="padding:6px 12px;border-bottom:1px solid var(--line)">📄 tramontina_clientes.csv</div>
+              <div style="padding:6px 12px;border-bottom:1px solid var(--line)">📄 tramontina_clustering.csv</div>
+              <div style="padding:6px 12px;background:#fbf0db;color:var(--navy)">📄 <b>tramontina_clientes.csv</b> &nbsp;✓ selecionado</div>
+            </div>
+            <div style="text-align:right;margin-top:10px"><span class="fwmock" style="display:none"></span><span style="background:var(--navy);color:#fff;border-radius:7px;padding:7px 16px;font-weight:600">Abrir</span></div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="flowrow">
+        <div class="txt">
+          <div class="n">3.3</div>
+          <h4>Confira que os dados entraram</h4>
+          <p>Logo abaixo aparece um resumo: número de <b>instâncias</b> (linhas) e <b>atributos</b> (colunas). Para ver a tabela, ligue o <b>File</b> a um <b>Data Table</b> e dê duplo clique nele.</p>
+        </div>
+        <figure class="shot" style="margin:0">
+          <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url" style="margin-left:auto">Data Table</span></div>
+          <div class="canvas" style="font-family:'JetBrains Mono';font-size:11px;color:var(--muted);overflow-x:auto">
+            <table style="border-collapse:collapse;width:100%;min-width:300px">
+              <tr style="background:#eef0f2;color:var(--navy)"><th style="padding:6px 8px;text-align:left">id</th><th style="padding:6px 8px;text-align:left">idade</th><th style="padding:6px 8px;text-align:left">gasto</th><th style="padding:6px 8px;text-align:left">churn</th></tr>
+              <tr><td style="padding:5px 8px;border-top:1px solid var(--line)">1001</td><td style="padding:5px 8px;border-top:1px solid var(--line)">34</td><td style="padding:5px 8px;border-top:1px solid var(--line)">1 280</td><td style="padding:5px 8px;border-top:1px solid var(--line)">não</td></tr>
+              <tr><td style="padding:5px 8px;border-top:1px solid var(--line)">1002</td><td style="padding:5px 8px;border-top:1px solid var(--line)">52</td><td style="padding:5px 8px;border-top:1px solid var(--line)">430</td><td style="padding:5px 8px;border-top:1px solid var(--line)">sim</td></tr>
+              <tr><td style="padding:5px 8px;border-top:1px solid var(--line)">1003</td><td style="padding:5px 8px;border-top:1px solid var(--line)">28</td><td style="padding:5px 8px;border-top:1px solid var(--line)">2 015</td><td style="padding:5px 8px;border-top:1px solid var(--line)">não</td></tr>
+            </table>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" style="background:#f3f0e9;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Problemas comuns</div>
+      <h2>Se algo der errado</h2>
+    </div>
+    <div class="faq">
+      <div class="qa">
+        <h4><span class="q">?</span> No Mac aparece “app de desenvolvedor não identificado”.</h4>
+        <p>Clique com o <b>botão direito</b> no ícone do Orange → <b>Abrir</b> → confirme em <b>Abrir</b>. Ou vá em <i>Ajustes do Sistema → Privacidade e Segurança</i> e clique em <b>“Abrir Assim Mesmo”</b>. Só precisa fazer isso na primeira vez.</p>
+      </div>
+      <div class="qa">
+        <h4><span class="q">?</span> No Windows o SmartScreen bloqueou o instalador.</h4>
+        <p>Clique em <b>“Mais informações”</b> e depois em <b>“Executar assim mesmo”</b>. O instalador do Orange é seguro — o aviso aparece por ser um programa baixado da internet.</p>
+      </div>
+      <div class="qa">
+        <h4><span class="q">?</span> O widget File mostra erro de caminho ao abrir um <code>.ows</code>.</h4>
+        <p>Isso acontece quando o arquivo foi montado em outro computador. Dê duplo clique no <b>File</b>, clique em <b>“…”</b> e aponte novamente para o <code>.csv</code> na sua pasta <code>Dados/</code>.</p>
+      </div>
+      <div class="qa">
+        <h4><span class="q">?</span> Os números aparecem como texto / acentos quebrados.</h4>
+        <p>No widget File, confira o separador e a codificação. Para nossos arquivos use separador <b>vírgula</b> e codificação <b>UTF-8</b>. Arquivos <code>.xlsx</code> evitam esse problema.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:34px;text-align:center">
+      <a href="index.html#orange" style="display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;text-decoration:none;border-radius:10px;padding:14px 24px;font-weight:700;font-size:14.5px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Baixar os dados e workflows da aula
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fbrand">Data Mining &amp; Machine Learning</div>
+      <div>Prof. Me. Otávio Parraga · PUCRS — Escola Politécnica</div>
+    </div>
+    <div style="text-align:right">
+      <div>Orange Data Mining · <a href="https://orangedatamining.com/download/" target="_blank" rel="noopener">orangedatamining.com/download</a></div>
+      <div style="margin-top:6px"><a href="index.html">← Voltar à página do módulo</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
