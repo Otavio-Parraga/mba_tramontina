@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Mining e Machine Learning · MBA · Prof. Otávio Parraga</title>
+<meta name="description" content="Materiais do módulo de Data Mining e Machine Learning: slides, datasets e workflows do Orange.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2942;
+    --navy-deep:#0a1f33;
+    --navy-soft:#163a5c;
+    --gold:#c8851f;
+    --gold-soft:#e0a040;
+    --ink:#0f2942;
+    --paper:#fbfaf7;
+    --paper-card:#ffffff;
+    --line:#e4e0d6;
+    --muted:#5d6b7a;
+    --muted-soft:#8a96a3;
+    --green:#2f8f6f;
+    --radius:14px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,250,247,.86);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:.01em;color:var(--navy)}
+  .brand span{color:var(--gold)}
+  .topnav{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--muted)}
+  .topnav a{text-decoration:none;transition:color .15s}
+  .topnav a:hover{color:var(--navy)}
+  @media(max-width:680px){.topnav{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    padding:84px 0 96px;
+  }
+  .hero::before{
+    /* signature: a faint data-grid / scatter motif */
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(200,133,31,.30) 1.4px, transparent 1.6px);
+    background-size:34px 34px;
+    -webkit-mask-image:linear-gradient(115deg, transparent 38%, #000 100%);
+    mask-image:linear-gradient(115deg, transparent 38%, #000 100%);
+    opacity:.55;
+  }
+  .hero .wrap{position:relative}
+  .eyebrow{
+    font-family:'JetBrains Mono';font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--gold-soft);margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:'Space Grotesk';font-weight:700;
+    font-size:clamp(38px,6.4vw,68px);line-height:1.02;letter-spacing:-.02em;
+    max-width:14ch;margin-bottom:22px;
+  }
+  .hero h1 .amp{color:var(--gold)}
+  .hero .lede{
+    font-size:clamp(16px,2.2vw,19px);color:#c4d2de;max-width:54ch;margin-bottom:34px;
+  }
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13.5px;color:#9fb2c2;font-weight:600}
+  .hero-meta b{color:#fff;font-weight:700}
+  .gold-rule{width:54px;height:4px;background:var(--gold);border-radius:2px;margin-bottom:30px}
+
+  /* ---------- section frame ---------- */
+  section{padding:72px 0}
+  .sec-head{margin-bottom:38px}
+  .sec-kicker{
+    font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px;
+  }
+  .sec-head h2{
+    font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.6vw,34px);
+    letter-spacing:-.01em;color:var(--navy);
+  }
+  .sec-head p{color:var(--muted);max-width:60ch;margin-top:10px;font-size:15.5px}
+
+  /* ---------- day cards ---------- */
+  .days{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.days{grid-template-columns:1fr}}
+  .day{
+    background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 28px 26px;display:flex;flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .day:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(15,41,66,.45)}
+  .day-top{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .day-num{font-family:'Space Grotesk';font-weight:700;font-size:15px;color:var(--gold)}
+  .day-when{font-family:'JetBrains Mono';font-size:11.5px;color:var(--muted-soft);margin-left:auto}
+  .day h3{font-family:'Space Grotesk';font-weight:700;font-size:23px;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
+  .day p{font-size:14.5px;color:var(--muted);margin-bottom:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+  .chip{
+    font-size:12px;font-weight:600;color:var(--navy-soft);
+    background:#eef3f7;border:1px solid #dde7ee;border-radius:999px;padding:4px 11px;
+  }
+  .day .spacer{flex:1}
+  .dl{
+    display:flex;align-items:center;gap:12px;text-decoration:none;
+    background:var(--navy);color:#fff;border-radius:10px;padding:13px 16px;
+    font-weight:600;font-size:14.5px;transition:background .15s;
+  }
+  .dl:hover{background:var(--navy-deep)}
+  .dl svg{flex:none}
+  .dl .meta{margin-left:auto;font-family:'JetBrains Mono';font-size:11px;color:#9fb2c2;font-weight:400}
+  .dl.soon{background:#e9eef2;color:var(--muted-soft);cursor:default;pointer-events:none;border:1px dashed var(--line)}
+  .dl.soon .meta{color:var(--muted-soft)}
+
+  /* ---------- resource lists (datasets / orange) ---------- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .panel{background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .panel-head{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  .panel-head .pin{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex:none}
+  .pin.ds{background:#eaf4ef;color:var(--green)}
+  .pin.ow{background:#fbf0db;color:var(--gold)}
+  .pin.nb{background:#eef0fb;color:#5a5fc0}
+  .panel-head h3{font-family:'Space Grotesk';font-weight:700;font-size:18px;color:var(--navy)}
+  .panel-head .sub{font-size:12.5px;color:var(--muted-soft);margin-top:1px}
+  .reslist{list-style:none}
+  .reslist li{border-bottom:1px solid var(--line)}
+  .reslist li:last-child{border-bottom:0}
+  .res{
+    display:flex;align-items:center;gap:14px;padding:15px 24px;text-decoration:none;
+    transition:background .12s;
+  }
+  .res:hover{background:#f6f4ef}
+  .res > span:first-child{display:flex;flex-direction:column;min-width:0}
+  .res .name{display:block;font-weight:600;font-size:14.5px;color:var(--navy)}
+  .res .desc{display:block;font-size:12.5px;color:var(--muted);margin-top:1px}
+  .res .file{font-family:'JetBrains Mono';font-size:11px;color:var(--muted-soft);margin-left:auto;white-space:nowrap}
+  .res .dlicon{color:var(--gold);flex:none;opacity:0;transition:opacity .12s}
+  .res:hover .dlicon{opacity:1}
+  .res.pending{cursor:default}
+  .res.pending:hover{background:transparent}
+  .res.pending .name{color:var(--muted-soft)}
+  .badge-soon{
+    font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted-soft);border:1px dashed var(--line);border-radius:999px;padding:3px 9px;margin-left:auto;
+  }
+  .panel-note{padding:14px 24px;background:#f6f4ef;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+  .panel-note code{font-family:'JetBrains Mono';font-size:11.5px;background:#ece8df;padding:1px 6px;border-radius:5px;color:var(--navy)}
+
+  /* ---------- orange how-to ---------- */
+  .howto{
+    margin-top:24px;background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;
+  }
+  @media(max-width:620px){.howto{grid-template-columns:1fr}}
+  .howto h4{font-family:'Space Grotesk';font-size:16px;margin-bottom:8px;color:var(--gold-soft)}
+  .howto ol{margin:0;padding-left:18px;font-size:14px;color:#cdd9e3}
+  .howto ol li{margin-bottom:5px}
+  .howto .oicon{width:46px;height:46px;border-radius:11px;background:var(--gold);display:grid;place-items:center;font-weight:700;font-family:'Space Grotesk';color:var(--navy);font-size:20px}
+  .howto a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
+  /* ---------- agenda ---------- */
+  .agenda{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.agenda{grid-template-columns:1fr}}
+  .timeline{list-style:none}
+  .timeline li{display:flex;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .timeline li:last-child{border-bottom:0}
+  .timeline .t{font-family:'JetBrains Mono';font-size:12px;color:var(--gold);font-weight:500;flex:none;width:92px;padding-top:2px}
+  .timeline .topic b{display:block;font-size:14.5px;color:var(--navy);font-weight:700}
+  .timeline .topic span{font-size:12.5px;color:var(--muted)}
+  .agenda-card{background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 18px}
+  .agenda-card .lbl{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+  .agenda-card .lbl b{font-family:'Space Grotesk';font-size:18px;color:var(--navy)}
+  .agenda-card .lbl .h{font-family:'JetBrains Mono';font-size:11.5px;color:var(--muted-soft);margin-left:auto}
+
+  /* ---------- biblio ---------- */
+  .biblio{columns:2;column-gap:40px}
+  @media(max-width:680px){.biblio{columns:1}}
+  .biblio .ref{break-inside:avoid;font-size:13.5px;color:var(--muted);padding:9px 0;border-bottom:1px solid var(--line)}
+  .biblio .ref b{color:var(--navy);font-weight:600}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-deep);color:#9fb2c2;padding:48px 0 40px;font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+  footer .fbrand{font-family:'Space Grotesk';font-weight:700;font-size:16px;color:#fff;margin-bottom:6px}
+  footer a{color:var(--gold-soft);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .disc{font-size:11.5px;color:#5f7488;max-width:48ch}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Data Mining <span>·</span> ML</div>
+    <nav class="topnav">
+      <a href="#aulas">Aulas</a>
+      <a href="#datasets">Dados</a>
+      <a href="#orange">Orange</a>
+      <a href="#notebooks">Notebooks</a>
+      <a href="#agenda">Agenda</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">MBA · IA e Ciência de Dados Aplicada</div>
+    <div class="gold-rule"></div>
+    <h1>Mineração de dados <span class="amp">&amp;</span> aprendizado de máquina</h1>
+    <p class="lede">Do dado bruto ao conhecimento: o processo de Data Mining, o preparo dos dados e como as máquinas aprendem. Aqui ficam os slides, os conjuntos de dados e os workflows do Orange usados em aula.</p>
+    <div class="hero-meta">
+      <span>Prof. Me. <b>Otávio Parraga</b></span>
+      <span><b>PUCRS</b> · Escola Politécnica</span>
+      <span><b>10h</b> · dois encontros</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ AULAS / DECKS ============ -->
+<section id="aulas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Material das aulas</div>
+      <h2>Slides dos dois dias</h2>
+      <p>Cada dia tem seu próprio deck. Baixe em PDF para acompanhar e revisar. O Dia 1 cobre o processo e a preparação dos dados; o Dia 2 entra na modelagem.</p>
+    </div>
+
+    <div class="days">
+      <!-- Dia 1 -->
+      <article class="day">
+        <div class="day-top">
+          <span class="day-num">Dia 1</span>
+          <span class="day-when">26/06 · 13h–19h</span>
+        </div>
+        <h3>Data Mining</h3>
+        <p>Descoberta de conhecimento em dados, KDD e CRISP-DM, tipos de dados e estatística descritiva, armazenamento, pré-processamento, amostragem e geração de dados.</p>
+        <div class="chips">
+          <span class="chip">KDD / CRISP-DM</span>
+          <span class="chip">Estatística descritiva</span>
+          <span class="chip">SQL · NoSQL</span>
+          <span class="chip">Pré-processamento</span>
+          <span class="chip">LGPD</span>
+          <span class="chip">SMOTE · leakage</span>
+        </div>
+        <div class="spacer"></div>
+        <a class="dl" href="Slides/1 - Data Mining.pdf" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Baixar deck · Dia 1
+          <span class="meta">PDF · 3.8 MB</span>
+        </a>
+      </article>
+
+      <!-- Dia 2 -->
+      <article class="day">
+        <div class="day-top">
+          <span class="day-num">Dia 2</span>
+          <span class="day-when">27/06 · 8h–12h</span>
+        </div>
+        <h3>Machine Learning</h3>
+        <p>Como as máquinas aprendem: tipos de aprendizado, modelos supervisionados (k-NN, árvores, regressões), avaliação e validação, e aprendizado não-supervisionado.</p>
+        <div class="chips">
+          <span class="chip">Supervisionado</span>
+          <span class="chip">k-NN · árvores</span>
+          <span class="chip">Viés × variância</span>
+          <span class="chip">Métricas · ROC</span>
+          <span class="chip">k-Means · PCA</span>
+          <span class="chip">Regras de associação</span>
+        </div>
+        <div class="spacer"></div>
+        <span class="dl soon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Deck · Dia 2
+          <span class="meta">em breve</span>
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DADOS + ORANGE ============ -->
+<section id="datasets" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Mãos à obra</div>
+      <h2>Conjuntos de dados e workflows</h2>
+      <p>Baixe os arquivos antes da prática. Os <b>datasets</b> abrem em qualquer ferramenta; os <b>workflows do Orange</b> (.ows) reproduzem o pipeline montado em aula.</p>
+    </div>
+
+    <div class="grid2">
+      <!-- DATASETS -->
+      <div class="panel">
+        <div class="panel-head">
+          <span class="pin ds">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          </span>
+          <div>
+            <h3>Conjuntos de dados</h3>
+            <div class="sub">CSV · usados nas práticas</div>
+          </div>
+        </div>
+        <ul class="reslist">
+          <li><a class="res" href="Dados/tramontina_clientes.csv" download>
+            <span>
+              <span class="name">Clientes · churn</span>
+              <span class="desc">Base desbalanceada para amostragem e classificação — Dia 1 e 2</span>
+            </span>
+            <span class="file">.csv</span>
+            <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a></li>
+          <li><a class="res" href="Dados/tramontina_clustering.csv" download>
+            <span>
+              <span class="name">Clientes · clustering</span>
+              <span class="desc">Base para segmentação não-supervisionada (k-Means)</span>
+            </span>
+            <span class="file">.csv</span>
+            <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a></li>
+          <li><a class="res" href="Dados/tramontina_clustering_gabarito.csv" download>
+            <span>
+              <span class="name">Clustering · gabarito</span>
+              <span class="desc">Rótulos de referência dos grupos para conferência</span>
+            </span>
+            <span class="file">.csv</span>
+            <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a></li>
+        </ul>
+        <div class="panel-note">Arquivos disponíveis na pasta <code>Dados/</code> deste repositório.</div>
+      </div>
+
+      <!-- ORANGE -->
+      <div class="panel" id="orange">
+        <div class="panel-head">
+          <span class="pin ow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M9 6h6"/><path d="M6 9v6a3 3 0 0 0 3 3h6"/></svg>
+          </span>
+          <div>
+            <h3>Workflows do Orange</h3>
+            <div class="sub">.ows · pipelines prontos</div>
+          </div>
+        </div>
+        <ul class="reslist">
+          <li><a class="res" href="Orange/DataMining.ows" download>
+            <span>
+              <span class="name">Dia 1 · Data Mining</span>
+              <span class="desc">Exploração: File → Data Table → Distributions, Scatter, Preprocess, Sampler</span>
+            </span>
+            <span class="file">.ows</span>
+            <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a></li>
+          <li><a class="res" href="Orange/MachineLearning.ows" download>
+            <span>
+              <span class="name">Dia 2 · Machine Learning</span>
+              <span class="desc">Test &amp; Score (k-NN, Árvore, Reg. Logística) + ROC e k-Means/PCA</span>
+            </span>
+            <span class="file">.ows</span>
+            <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a></li>
+        </ul>
+        <div class="panel-note">Arquivos <code>.ows</code> na pasta <code>Orange/</code>. Se o widget <b>File</b> pedir o caminho, aponte para os CSV da pasta <code>Dados/</code>.</div>
+      </div>
+    </div>
+
+    <!-- NOTEBOOKS -->
+    <div class="panel" id="notebooks" style="margin-top:24px">
+      <div class="panel-head">
+        <span class="pin nb">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg>
+        </span>
+        <div>
+          <h3>Notebooks em Python</h3>
+          <div class="sub">.ipynb · mesmo pipeline em código</div>
+        </div>
+      </div>
+      <ul class="reslist">
+        <li><a class="res" href="Notebooks/01_Analise_e_Processamento_de_Dados.ipynb" download>
+          <span>
+            <span class="name">01 · Análise e processamento de dados</span>
+            <span class="desc">Exploração, limpeza, transformação e amostragem — Dia 1</span>
+          </span>
+          <span class="file">.ipynb</span>
+          <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a></li>
+        <li><a class="res" href="Notebooks/02_Treinamento_de_Modelos.ipynb" download>
+          <span>
+            <span class="name">02 · Treinamento de modelos</span>
+            <span class="desc">Classificação, avaliação (ROC, métricas) e clustering — Dia 2</span>
+          </span>
+          <span class="file">.ipynb</span>
+          <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a></li>
+      </ul>
+      <div class="panel-note">Notebooks Jupyter na pasta <code>Notebooks/</code>. Abra com Jupyter, VS Code ou Google Colab; os dados estão em <code>Dados/</code>.</div>
+    </div>
+
+    <!-- como usar o Orange -->
+    <div class="howto">
+      <div class="oicon">O</div>
+      <div>
+        <h4>Como abrir os workflows</h4>
+        <ol>
+          <li>Instale o Orange Data Mining (gratuito) em <a href="https://orangedatamining.com/download/" target="_blank" rel="noopener">orangedatamining.com/download</a>.</li>
+          <li>Baixe o conjunto de dados correspondente e o arquivo <code style="font-family:'JetBrains Mono';font-size:.85em">.ows</code>.</li>
+          <li>Abra o <code style="font-family:'JetBrains Mono';font-size:.85em">.ows</code> no Orange. Se o widget <b>File</b> pedir o caminho, aponte para o CSV que você baixou.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENDA ============ -->
+<section id="agenda" style="background:#f3f0e9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">10 horas · dois encontros</div>
+      <h2>Agenda do módulo</h2>
+      <p>O fio condutor é o caso Tramontina: do dado bruto à decisão de negócio. A teoria de cada bloco é seguida de prática no Orange.</p>
+    </div>
+
+    <div class="agenda">
+      <div class="agenda-card">
+        <div class="lbl"><b>Dia 1 — Data Mining</b><span class="h">6h</span></div>
+        <ul class="timeline">
+          <li><span class="t">Bloco 1</span><span class="topic"><b>O que é Data Mining</b><span>Processos (KDD, CRISP-DM, SEMMA) e o fluxo de um projeto</span></span></li>
+          <li><span class="t">Bloco 2</span><span class="topic"><b>Dados e estatística descritiva</b><span>Tipos de dados, tendência central, dispersão, correlação</span></span></li>
+          <li><span class="t">Bloco 3</span><span class="topic"><b>Armazenamento</b><span>SQL, NoSQL, vetorial; warehouse × lake; formatos</span></span></li>
+          <li><span class="t">Bloco 4</span><span class="topic"><b>Pré-processamento</b><span>Limpeza, transformação, LGPD, redução de dimensionalidade</span></span></li>
+          <li><span class="t">Bloco 5</span><span class="topic"><b>Amostragem e dados sintéticos</b><span>Desbalanceamento, SMOTE, data leakage</span></span></li>
+          <li><span class="t">Prática</span><span class="topic"><b>Orange · Exploração</b><span>Pipeline completo de exploração da base</span></span></li>
+        </ul>
+      </div>
+
+      <div class="agenda-card">
+        <div class="lbl"><b>Dia 2 — Machine Learning</b><span class="h">4h</span></div>
+        <ul class="timeline">
+          <li><span class="t">Bloco 1</span><span class="topic"><b>O que é Machine Learning</b><span>Tipos de aprendizado, fluxo clássico, modelo × algoritmo</span></span></li>
+          <li><span class="t">Bloco 2</span><span class="topic"><b>Aprendizado supervisionado</b><span>k-NN, árvores, regressões, viés × variância</span></span></li>
+          <li><span class="t">Bloco 3</span><span class="topic"><b>Avaliação e validação</b><span>Treino/teste, validação cruzada, métricas, ROC</span></span></li>
+          <li><span class="t">Bloco 4</span><span class="topic"><b>Não-supervisionado</b><span>k-Means, hierárquico, regras de associação, PCA</span></span></li>
+          <li><span class="t">Prática</span><span class="topic"><b>Orange · Modelagem</b><span>Classificação comparada e clustering</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fbrand">Data Mining &amp; Machine Learning</div>
+      <div>Prof. Me. Otávio Parraga · PUCRS — Escola Politécnica</div>
+      <div class="disc" style="margin-top:10px">Os números e dados da Tramontina usados em aula são sintéticos e ilustrativos, com fins didáticos.</div>
+    </div>
+    <div style="text-align:right">
+      <div>Orange Data Mining · <a href="https://orangedatamining.com" target="_blank" rel="noopener">orangedatamining.com</a></div>
+      <div style="margin-top:6px;font-size:12px;color:#5f7488">MBA · IA e Ciência de Dados Aplicada</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

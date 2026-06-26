@@ -1,0 +1,261 @@
+﻿ID_Cliente,Regiao,Canal_Venda,Porte_Cliente,Segmento,Tempo_Relacionamento_meses,Recencia_dias,Frequencia_pedidos_ano,Ticket_Medio_R$,N_Categorias_Compradas,Faturamento_Anual_R$,Desconto_Medio_%,Satisfacao_NPS_1a10,Chamados_Suporte_ano,Atraso_Medio_Pagamento_dias,Comprou_Cutelaria,Comprou_Panelas,Comprou_Utilidades_Cozinha,Comprou_Ferramentas,Comprou_Eletroportateis,Comprou_Moveis,Comprou_Talheres,Comprou_Jardinagem,Churn
+TRM1000,Nordeste,Varejo Físico,Grande,Doméstico,39,46,32,760.32,2,26864.41,1.1,7.3,5,3,0,1,1,0,0,0,0,0,Sim
+TRM1001,Sudeste,Marketplace,Pequeno,Corporativo,25,45,8,259.22,7,3016.26,10.2,,5,6,1,1,1,1,0,1,1,1,Sim
+TRM1002,Norte,E-commerce,Pequeno,Doméstico,40,12,7,191.0,3,1279.56,,8.2,2,2,1,1,0,0,0,0,1,0,Não
+TRM1003,Nordeste,Varejo Físico,Médio,Profissional/Food Service,69,208,14,511.54,3,7057.75,2.3,7.4,3,19,1,0,1,0,0,0,1,0,Sim
+TRM1004,Sul,Atacado,Pequeno,Corporativo,9,48,8,224.2,6,2194.39,7.2,7.5,8,0,1,1,1,1,0,0,1,1,Não
+TRM1005,Centro-Oeste,Varejo Físico,Pequeno,Doméstico,15,74,4,212.05,6,1091.21,9.6,7.1,3,0,1,1,1,1,1,0,0,1,Sim
+TRM1006,Nordeste,Varejo Físico,Grande,Profissional/Food Service,26,50,34,719.16,5,31261.24,6.4,,2,0,1,1,1,0,1,0,1,0,Não
+TRM1007,Nordeste,Varejo Físico,Grande,Doméstico,45,32,48,873.67,4,50770.01,15.8,4.9,7,0,0,1,1,0,1,0,0,1,Sim
+TRM1008,Sul,Varejo Físico,Médio,Profissional/Food Service,38,103,21,478.11,5,13562.62,11.1,7.7,1,13,1,1,1,0,1,0,1,0,Não
+TRM1009,Sudeste,Varejo Físico,Pequeno,Profissional/Food Service,45,64,7,229.8,5,2177.93,8.2,10.0,3,17,1,1,1,0,1,0,1,0,Não
+TRM1010,Sudeste,Varejo Físico,Médio,Doméstico,25,48,9,462.46,3,4336.26,4.5,7.1,1,0,1,1,1,0,0,0,0,0,Não
+TRM1011,Centro-Oeste,Varejo Físico,Médio,Doméstico,32,74,16,505.18,4,9719.84,4.1,7.0,0,0,1,1,0,1,0,0,0,1,Não
+TRM1012,Sudeste,Varejo Físico,Pequeno,Doméstico,57,54,11,156.92,6,2091.76,12.1,8.5,1,0,0,1,1,1,1,0,1,1,Não
+TRM1013,Nordeste,Distribuidor,Médio,Doméstico,36,174,14,464.35,2,6787.18,2.0,8.3,4,15,0,0,1,0,0,0,1,0,Não
+TRM1014,Sudeste,Distribuidor,Pequeno,Doméstico,42,101,7,186.34,4,12718.87,12.3,8.2,4,14,0,1,1,0,1,0,1,0,Não
+TRM1015,Sul,E-commerce,Pequeno,Doméstico,31,83,7,124.55,3,710.19,7.3,4.2,4,4,1,0,1,0,1,0,0,0,Não
+TRM1016,Sudeste,E-commerce,Médio,Doméstico,22,13,14,563.68,6,12237.93,7.6,8.6,6,0,1,1,1,0,1,1,1,0,Não
+TRM1017,Sul,E-commerce,Pequeno,Doméstico,47,85,4,133.38,3,624.62,1.2,10.0,2,0,1,0,1,0,0,1,0,0,Não
+TRM1018,Nordeste,Marketplace,Pequeno,Profissional/Food Service,55,83,5,238.59,4,1340.6,7.4,7.9,5,6,1,0,1,0,0,0,1,1,Não
+TRM1019,Sudeste,Marketplace,Médio,Profissional/Food Service,34,24,12,554.48,4,9062.05,10.5,6.1,5,9,0,1,1,0,1,0,1,0,Não
+TRM1020,Nordeste,Varejo Físico,Grande,Profissional/Food Service,17,13,34,1234.63,2,43259.32,7.7,7.9,2,0,1,0,0,0,0,1,0,0,Não
+TRM1021,Sudeste,Varejo Físico,Médio,Doméstico,43,98,22,382.61,8,12079.45,10.0,5.7,8,2,1,1,1,1,1,1,1,1,Sim
+TRM1022,Centro-Oeste,Varejo Físico,Médio,Corporativo,41,107,13,692.54,4,10209.57,8.4,8.5,3,18,0,0,0,1,0,1,1,1,Não
+TRM1023,Norte,Varejo Físico,Grande,Profissional/Food Service,28,34,23,920.68,6,31166.46,10.4,6.5,4,3,1,1,1,0,1,1,1,0,Não
+TRM1024,Nordeste,Distribuidor,Pequeno,Doméstico,107,33,4,177.87,5,6477.2,11.4,7.7,6,17,1,1,0,1,0,0,1,1,Não
+TRM1025,Sul,E-commerce,Pequeno,Doméstico,70,64,5,161.73,4,965.62,0.0,6.2,2,10,1,1,1,0,0,0,1,0,Não
+TRM1026,Sudeste,Varejo Físico,Pequeno,Profissional/Food Service,40,40,2,203.06,6,578.8,9.4,7.0,3,0,1,1,1,0,1,1,1,0,Sim
+TRM1027,Sul,E-commerce,Pequeno,Doméstico,41,12,4,193.89,2,860.58,14.5,9.4,2,3,0,1,0,0,0,0,1,0,Não
+TRM1028,Sul,E-commerce,Médio,Doméstico,69,23,15,501.46,5,9286.6,13.8,7.8,2,4,1,1,1,0,1,0,1,0,Não
+TRM1029,Nordeste,Varejo Físico,Pequeno,Corporativo,59,72,7,258.88,5,2446.69,9.6,6.6,2,0,0,0,0,1,1,1,1,1,Não
+TRM1030,Nordeste,Marketplace,Pequeno,Doméstico,30,25,3,205.29,4,874.31,6.8,6.1,7,0,1,0,0,1,0,1,1,0,Não
+TRM1031,Centro-Oeste,Varejo Físico,Pequeno,Doméstico,41,111,4,181.61,3,834.27,5.5,4.3,5,17,1,1,0,0,0,0,1,0,Sim
+TRM1032,Sudeste,Atacado,Pequeno,Corporativo,30,82,6,241.08,5,1810.39,6.8,5.6,5,0,1,1,1,1,0,0,1,0,Não
+TRM1033,Sudeste,Varejo Físico,Grande,Profissional/Food Service,14,75,24,1143.39,3,31153.85,15.2,7.2,5,14,0,1,1,0,1,0,0,0,Não
+TRM1034,Sudeste,Marketplace,Pequeno,Doméstico,9,63,3,170.3,2,598.33,4.8,8.3,2,2,0,0,1,0,0,0,1,0,Não
+TRM1035,Sul,Atacado,Pequeno,Corporativo,36,30,5,247.43,5,1460.53,11.0,6.9,2,5,0,0,1,1,1,1,0,1,Sim
+TRM1036,Sul,Atacado,Pequeno,Corporativo,69,91,8,283.88,6,2886.62,16.5,9.3,1,9,1,0,0,1,1,1,1,1,Não
+TRM1037,Sudeste,Marketplace,Pequeno,Doméstico,29,30,7,187.6,5,1428.09,7.8,6.7,3,0,1,1,1,0,1,0,1,0,Não
+TRM1038,Sul,Marketplace,Médio,Profissional/Food Service,33,115,18,404.75,5,8178.41,2.6,6.6,2,10,1,0,0,1,1,0,1,1,Não
+TRM1039,Sudeste,Distribuidor,Pequeno,Doméstico,24,156,7,126.49,4,1001.53,2.6,5.1,6,0,1,1,1,0,0,0,1,0,Sim
+TRM1040,Sudeste,Marketplace,Pequeno,Doméstico,10,64,9,193.76,4,2048.52,11.1,8.6,1,9,1,1,1,0,1,0,0,0,Não
+TRM1041,Nordeste,Varejo Físico,Pequeno,Profissional/Food Service,26,143,7,198.58,4,1872.41,7.8,9.3,2,0,1,1,1,0,0,0,1,0,Não
+TRM1042,Nordeste,E-commerce,Médio,Doméstico,32,24,17,442.83,5,9735.13,11.5,5.4,6,3,1,1,1,0,0,1,0,1,Sim
+TRM1043,Sudeste,E-commerce,Médio,Profissional/Food Service,35,83,10,584.04,3,6063.96,5.9,6.6,5,12,0,1,0,0,0,0,1,1,Sim
+TRM1044,Nordeste,Marketplace,Médio,Profissional/Food Service,62,57,16,428.92,5,8014.18,11.3,,1,10,1,1,1,0,1,0,1,0,Não
+TRM1045,Nordeste,E-commerce,Médio,Doméstico,42,99,10,313.29,3,3894.75,7.4,5.0,2,0,0,1,1,0,0,0,1,0,Sim
+TRM1046,Sudeste,E-commerce,Médio,Profissional/Food Service,63,7,13,651.59,5,106589.02,5.1,8.6,5,0,1,1,1,0,1,0,1,0,Não
+TRM1047,Sudeste,Distribuidor,Pequeno,Doméstico,45,95,6,191.39,4,1358.09,6.4,8.6,7,0,1,0,1,0,0,1,1,0,Não
+TRM1048,Nordeste,Varejo Físico,Pequeno,Corporativo,43,33,5,256.42,6,1607.72,3.2,7.8,6,6,1,1,1,0,1,1,0,1,Não
+TRM1049,Sul,Varejo Físico,Médio,Doméstico,47,59,18,349.39,3,7677.6,16.0,7.9,5,0,1,0,0,1,0,0,1,0,Não
+TRM1050,Sul,E-commerce,Pequeno,Profissional/Food Service,18,205,8,208.46,6,1995.7,7.6,8.6,1,5,1,1,1,0,1,0,1,1,Sim
+TRM1051,Sul,E-commerce,Médio,Profissional/Food Service,51,85,12,434.99,6,6998.66,10.6,9.8,3,7,1,1,1,1,1,0,1,0,Não
+TRM1052,Nordeste,Varejo Físico,Pequeno,Doméstico,26,77,8,208.62,6,2564.12,5.9,7.3,7,3,1,1,1,1,0,0,1,1,Não
+TRM1053,Sudeste,E-commerce,Médio,Profissional/Food Service,27,73,17,466.28,2,8540.4,3.8,,5,9,1,0,1,0,0,0,0,0,Sim
+TRM1054,Nordeste,E-commerce,Grande,Profissional/Food Service,33,123,31,1374.49,4,47159.1,12.1,5.6,9,7,0,1,1,0,1,0,0,1,Não
+TRM1055,Nordeste,E-commerce,Médio,Profissional/Food Service,25,102,12,494.71,4,7235.07,12.4,8.2,3,1,1,0,1,0,0,0,1,1,Não
+TRM1056,Sudeste,E-commerce,Grande,Profissional/Food Service,16,73,42,1009.09,6,53024.65,10.9,5.6,5,0,0,1,1,1,1,0,1,1,Não
+TRM1057,Sudeste,Distribuidor,Médio,Corporativo,32,67,19,597.77,5,12512.74,4.5,7.0,4,6,0,0,1,1,0,1,1,1,Sim
+TRM1058,Sul,Varejo Físico,Grande,Doméstico,27,63,30,501.27,5,19693.04,13.6,7.5,5,0,1,1,1,0,0,1,1,0,Sim
+TRM1059,Sul,Atacado,Pequeno,Doméstico,26,54,7,176.09,4,1584.57,10.0,6.7,7,0,1,1,1,0,0,0,1,0,Não
+TRM1060,Sudeste,Atacado,Pequeno,Doméstico,30,19,6,174.49,6,1327.17,14.6,8.2,3,9,1,1,1,1,1,0,1,0,Não
+TRM1061,Sudeste,E-commerce,Médio,Profissional/Food Service,5,84,13,587.35,6,9626.65,9.4,10.0,0,16,1,1,1,0,1,1,1,0,Não
+TRM1062,Sudeste,E-commerce,Pequeno,Doméstico,27,36,3,118.88,6,427.97,10.6,7.5,1,5,1,1,1,0,1,1,1,0,Não
+TRM1063,Nordeste,E-commerce,Pequeno,Doméstico,67,49,6,217.64,6,1677.23,10.9,7.0,7,9,1,1,1,0,1,0,1,1,Não
+TRM1064,Sudeste,Marketplace,Grande,Doméstico,64,107,39,1090.32,2,43045.98,8.4,8.0,8,0,1,0,0,0,0,0,1,0,Não
+TRM1065,Sudeste,Distribuidor,Médio,Corporativo,32,55,13,724.65,3,9697.52,4.1,7.6,0,7,0,0,0,1,0,0,1,1,Não
+TRM1066,Sudeste,Marketplace,Pequeno,Doméstico,32,52,6,178.29,2,1305.57,3.7,9.0,1,5,0,0,1,0,1,0,0,0,Não
+TRM1067,Sudeste,E-commerce,Pequeno,Profissional/Food Service,4,64,13,257.85,4,4103.03,2.7,7.5,1,15,0,1,1,0,1,0,1,0,Não
+TRM1068,Sul,Distribuidor,Pequeno,Doméstico,22,44,6,132.33,4,979.8,11.2,7.1,4,1,1,0,1,0,1,0,1,0,Sim
+TRM1069,Sudeste,Varejo Físico,Pequeno,Corporativo,47,202,3,293.1,5,1167.39,9.2,3.9,5,3,1,0,1,1,0,1,0,1,Sim
+TRM1070,Sul,Distribuidor,Grande,Doméstico,25,184,31,818.13,3,30157.61,13.3,4.1,6,13,0,0,0,1,0,1,0,1,Sim
+TRM1071,Sudeste,Varejo Físico,Pequeno,Doméstico,56,181,5,126.49,4,721.63,0.0,3.9,3,4,0,1,1,0,1,0,0,1,Não
+TRM1072,Norte,Distribuidor,Pequeno,Corporativo,54,73,6,233.58,5,1775.73,16.2,7.8,5,0,0,1,1,1,0,0,1,1,Não
+TRM1073,Sul,Marketplace,Médio,Corporativo,22,34,7,630.42,5,5354.27,4.4,5.8,2,25,0,1,1,1,0,1,0,1,Sim
+TRM1074,Sul,Varejo Físico,Pequeno,Doméstico,34,109,5,153.29,3,888.54,16.2,8.4,5,0,0,1,1,0,0,0,1,0,Sim
+TRM1075,Sudeste,Distribuidor,Pequeno,Doméstico,70,45,5,192.18,5,1224.09,2.2,7.6,4,4,1,1,1,0,0,1,1,0,Não
+TRM1076,Sudeste,Varejo Físico,Médio,Profissional/Food Service,11,115,9,388.3,5,4200.77,4.8,6.6,4,8,1,1,1,0,0,1,1,0,Não
+TRM1077,Sudeste,Distribuidor,Médio,Corporativo,25,33,19,469.19,7,10834.57,0.0,6.7,1,7,1,1,1,1,0,1,1,1,Não
+TRM1078,Sudeste,Varejo Físico,Grande,Doméstico,10,77,24,1184.68,3,32216.74,,7.9,1,3,1,1,0,0,0,0,1,0,Sim
+TRM1079,Nordeste,Atacado,Médio,Doméstico,17,126,17,488.33,5,10125.78,3.6,5.8,7,4,1,1,0,0,0,1,1,1,Não
+TRM1080,Sudeste,Varejo Físico,Pequeno,Profissional/Food Service,81,47,9,191.0,3,1634.12,3.7,6.0,6,3,1,1,1,0,0,0,0,0,Não
+TRM1081,Sudeste,Atacado,Médio,Profissional/Food Service,25,47,11,524.77,4,7088.15,2.5,9.0,5,0,1,0,1,0,1,0,1,0,Não
+TRM1082,Nordeste,Marketplace,Grande,Profissional/Food Service,7,14,35,1361.84,5,63668.29,,8.2,3,22,1,0,0,1,1,0,1,1,Não
+TRM1083,Sul,Distribuidor,Médio,Profissional/Food Service,16,33,9,556.69,7,8192.12,10.8,7.5,6,3,1,1,1,1,1,0,1,1,Sim
+TRM1084,Sul,Marketplace,Grande,Doméstico,9,72,30,975.35,4,33446.83,20.2,8.0,2,10,1,1,1,0,0,0,1,0,Não
+TRM1085,Sul,Marketplace,Médio,Corporativo,35,80,7,712.79,7,6493.32,5.3,7.4,0,2,1,1,1,1,0,1,1,1,Não
+TRM1086,Nordeste,Atacado,Grande,Corporativo,40,88,29,1300.05,5,502693.89,13.9,7.7,3,2,0,1,1,0,1,1,0,1,Não
+TRM1087,Sudeste,Varejo Físico,Pequeno,Profissional/Food Service,51,9,12,226.01,7,3750.05,2.8,7.0,1,1,1,1,1,1,1,0,1,1,Não
+TRM1088,Sul,Distribuidor,Médio,Doméstico,46,45,10,418.65,6,5530.54,6.7,10.0,2,0,1,1,1,0,1,0,1,1,Não
+TRM1089,Sudeste,Varejo Físico,Pequeno,Doméstico,11,16,4,171.16,4,755.44,5.9,6.9,7,4,1,0,1,0,1,0,1,0,Sim
+TRM1090,Sul,Distribuidor,Médio,Profissional/Food Service,39,69,12,495.53,6,7622.09,9.9,9.4,3,2,0,1,1,1,1,0,1,1,Sim
+TRM1091,Nordeste,Varejo Físico,Médio,Doméstico,29,12,15,425.51,6,6984.02,12.1,7.7,0,14,1,1,1,0,1,0,1,1,Não
+TRM1092,Sudeste,Distribuidor,Grande,Corporativo,56,21,19,1430.88,4,34457.81,17.0,8.7,5,0,0,0,1,0,0,1,1,1,Sim
+TRM1093,Sudeste,Distribuidor,Grande,Doméstico,49,100,31,770.72,5,27799.88,9.6,8.0,4,0,1,0,0,1,0,1,1,1,Não
+TRM1094,Sudeste,E-commerce,Pequeno,Profissional/Food Service,87,37,9,250.98,6,2928.32,12.0,9.2,3,0,1,1,0,1,1,1,1,0,Não
+TRM1095,Sudeste,E-commerce,Médio,Corporativo,17,143,9,556.19,4,5232.57,7.8,5.5,4,17,0,0,1,1,1,1,0,0,Não
+TRM1096,Sudeste,Marketplace,Médio,Doméstico,15,90,15,403.5,7,7847.91,6.7,8.7,2,0,1,1,1,1,1,0,1,1,Não
+TRM1097,Sul,Marketplace,Pequeno,Doméstico,23,47,3,170.43,3,559.84,5.2,9.7,4,9,1,0,1,0,0,1,0,0,Não
+TRM1098,Sul,E-commerce,Pequeno,Profissional/Food Service,30,112,9,236.6,4,2510.42,5.8,6.5,9,13,1,1,1,0,0,0,1,0,Sim
+TRM1099,Centro-Oeste,Distribuidor,Pequeno,Profissional/Food Service,20,50,5,156.34,7,1103.91,15.0,7.7,6,4,1,1,1,1,1,0,1,1,Não
+TRM1100,Centro-Oeste,Atacado,Médio,Doméstico,17,97,21,487.35,3,12782.1,9.2,6.2,2,0,1,1,0,0,0,0,1,0,Sim
+TRM1101,Nordeste,Varejo Físico,Pequeno,Profissional/Food Service,38,32,3,203.07,4,761.01,8.7,7.1,5,0,1,1,0,0,1,0,1,0,Não
+TRM1102,Sul,Varejo Físico,Grande,Corporativo,23,116,36,1633.61,4,74737.36,12.0,9.1,3,12,0,0,1,1,0,0,1,1,Não
+TRM1103,Centro-Oeste,Varejo Físico,Pequeno,Doméstico,19,13,9,164.51,5,2048.33,17.8,6.5,4,0,1,1,1,0,0,0,1,1,Não
+TRM1104,Nordeste,Distribuidor,Grande,Doméstico,11,21,20,941.65,4,23235.79,18.2,6.4,3,8,1,0,1,0,0,1,1,0,Sim
+TRM1105,Nordeste,E-commerce,Pequeno,Doméstico,5,25,7,242.01,3,1891.79,5.1,9.6,2,6,1,0,0,0,0,1,1,0,Não
+TRM1106,Sudeste,Marketplace,Médio,Doméstico,65,35,14,399.03,2,6399.65,6.9,8.1,4,8,1,0,0,0,1,0,0,0,Não
+TRM1107,Sul,Distribuidor,Pequeno,Doméstico,64,74,6,220.14,7,1950.54,,10.0,4,9,1,1,1,1,1,0,1,1,Não
+TRM1108,Sul,E-commerce,Médio,Doméstico,49,58,11,422.95,4,5774.74,8.6,6.7,0,0,1,1,1,0,0,0,1,0,Não
+TRM1109,Centro-Oeste,Atacado,Médio,Profissional/Food Service,43,97,14,556.41,2,7296.24,5.2,7.0,4,0,0,0,1,0,0,0,1,0,Não
+TRM1110,Sudeste,Marketplace,Grande,Doméstico,21,128,31,961.96,5,34488.52,14.8,6.0,7,11,1,0,1,1,0,0,1,1,Sim
+TRM1111,Sul,Varejo Físico,Médio,Corporativo,44,11,17,694.1,6,15002.32,13.8,8.1,3,0,0,1,0,1,1,1,1,1,Não
+TRM1112,Sudeste,E-commerce,Pequeno,Doméstico,14,138,4,157.79,4,791.22,2.7,4.3,3,0,0,1,0,1,1,0,1,0,Sim
+TRM1113,Sudeste,E-commerce,Pequeno,Doméstico,33,49,7,148.12,6,1345.59,3.5,8.5,2,10,1,1,1,1,1,0,0,1,Não
+TRM1114,Sul,Varejo Físico,Pequeno,Profissional/Food Service,18,179,7,204.31,3,1747.47,6.1,6.6,4,0,1,0,1,0,0,0,1,0,Sim
+TRM1115,Norte,Varejo Físico,Pequeno,Corporativo,44,31,4,273.23,7,1642.77,6.3,,3,9,1,0,1,1,1,1,1,1,Não
+TRM1116,Nordeste,Atacado,Médio,Doméstico,73,8,14,403.31,5,7673.14,16.0,7.3,5,16,1,1,1,0,0,1,1,0,Não
+TRM1117,Nordeste,E-commerce,Médio,Doméstico,16,91,20,473.7,3,11634.23,12.0,5.8,9,5,1,0,0,0,0,0,1,1,Sim
+TRM1118,Sudeste,E-commerce,Médio,Doméstico,22,87,19,518.64,4,10663.26,11.8,8.0,3,13,1,1,1,0,0,0,1,0,Não
+TRM1119,Sudeste,Distribuidor,Grande,Doméstico,33,22,28,783.13,2,24140.74,11.9,5.9,5,6,1,1,0,0,0,0,0,0,Não
+TRM1120,Sudeste,E-commerce,Médio,Doméstico,8,24,17,364.51,6,7664.15,,8.5,1,18,1,1,1,0,1,1,1,0,Não
+TRM1121,Sudeste,Atacado,Médio,Doméstico,10,102,11,311.42,5,3687.38,2.2,9.7,1,0,1,1,1,0,1,0,1,0,Não
+TRM1122,Sul,Marketplace,Pequeno,Doméstico,71,76,2,245.78,1,480.26,11.1,8.8,3,5,0,1,0,0,0,0,0,0,Não
+TRM1123,Sudeste,E-commerce,Pequeno,Doméstico,38,45,5,189.87,3,1175.96,10.0,5.4,3,10,0,1,1,0,0,0,1,0,Não
+TRM1124,Sul,E-commerce,Médio,Corporativo,21,82,13,666.27,6,11675.0,13.1,6.6,7,3,1,0,1,1,1,1,0,1,Não
+TRM1125,Sudeste,Atacado,Grande,Profissional/Food Service,31,71,23,958.32,5,31743.23,12.2,7.9,1,14,1,1,1,0,1,0,1,0,Não
+TRM1126,Sudeste,Distribuidor,Pequeno,Doméstico,23,26,5,179.96,4,1076.82,7.4,7.5,5,2,0,1,1,0,0,1,1,0,Não
+TRM1127,Sul,Atacado,Médio,Doméstico,33,108,15,458.5,2,8717.74,8.7,4.9,6,22,0,1,0,0,0,0,1,0,Sim
+TRM1128,Sul,Varejo Físico,Médio,Doméstico,24,94,11,400.89,4,5277.45,11.6,7.5,3,22,0,1,1,1,1,0,0,0,Sim
+TRM1129,Sudeste,Marketplace,Pequeno,Doméstico,29,59,5,214.85,3,1205.32,2.1,7.2,5,7,0,1,1,0,1,0,0,0,Não
+TRM1130,Sul,Distribuidor,Pequeno,Profissional/Food Service,46,102,4,299.9,4,1270.65,10.9,9.4,2,9,1,0,1,0,0,1,1,0,Não
+TRM1131,Centro-Oeste,Varejo Físico,Grande,Corporativo,45,194,32,1263.05,5,54570.54,12.9,6.0,4,15,0,1,1,1,0,0,1,1,Sim
+TRM1132,Sudeste,Distribuidor,Médio,Corporativo,69,24,14,552.73,7,10101.23,3.8,9.4,3,0,0,1,1,1,1,1,1,1,Não
+TRM1133,Sudeste,Distribuidor,Pequeno,Corporativo,39,47,4,241.56,3,1026.17,0.0,5.7,2,0,0,0,0,1,0,1,0,1,Não
+TRM1134,Sudeste,Varejo Físico,Grande,Corporativo,32,49,29,1699.66,6,70644.99,12.5,6.3,6,15,0,1,1,1,1,1,0,1,Não
+TRM1135,Sul,E-commerce,Pequeno,Corporativo,75,101,6,303.77,1,1991.5,13.8,7.6,3,7,0,0,0,0,0,1,0,0,Não
+TRM1136,Centro-Oeste,Marketplace,Grande,Doméstico,27,35,39,926.82,5,48880.19,19.7,9.0,4,3,1,1,1,0,1,0,1,0,Sim
+TRM1137,Sudeste,Varejo Físico,Pequeno,Doméstico,5,97,5,181.18,3,985.21,9.4,5.6,5,5,0,0,1,0,1,0,1,0,Não
+TRM1138,Nordeste,E-commerce,Médio,Doméstico,50,38,13,358.27,5,5751.76,15.8,7.6,3,0,1,1,1,0,1,1,0,0,Não
+TRM1139,Sul,E-commerce,Pequeno,Profissional/Food Service,37,21,6,253.84,3,1697.64,7.8,5.7,2,3,0,1,0,1,0,0,0,1,Não
+TRM1140,Sudeste,E-commerce,Pequeno,Doméstico,31,61,6,167.69,3,1197.42,11.8,7.0,4,0,1,0,0,0,1,0,1,0,Não
+TRM1141,Sudeste,Atacado,Grande,Profissional/Food Service,51,38,30,1143.03,7,52431.74,11.2,8.9,2,12,1,1,1,1,1,0,1,1,Sim
+TRM1142,Centro-Oeste,Marketplace,Pequeno,Profissional/Food Service,24,66,5,244.72,5,1561.95,5.9,6.8,6,13,1,1,1,0,1,0,1,0,Sim
+TRM1143,Sudeste,Varejo Físico,Pequeno,Doméstico,5,78,5,173.91,3,1127.76,5.3,6.7,6,10,1,0,0,0,0,1,1,0,Não
+TRM1144,Sudeste,Atacado,Pequeno,Doméstico,51,12,5,172.39,4,1090.1,0.0,,3,8,1,1,1,0,0,0,1,0,Não
+TRM1145,Sul,Marketplace,Médio,Doméstico,20,41,13,420.8,5,6655.88,13.1,6.7,5,0,0,1,1,0,1,0,1,1,Sim
+TRM1146,Sudeste,Varejo Físico,Médio,Doméstico,16,61,17,480.13,2,9225.54,5.4,9.4,0,10,0,1,1,0,0,0,0,0,Não
+TRM1147,Sudeste,Marketplace,Grande,Corporativo,6,103,21,1706.55,6,52947.03,9.8,7.2,3,10,0,1,1,1,0,1,1,1,Não
+TRM1148,Sudeste,Varejo Físico,Pequeno,Profissional/Food Service,49,94,11,243.97,6,4046.5,3.3,,1,15,1,1,1,0,1,0,1,1,Sim
+TRM1149,Sul,Atacado,Pequeno,Profissional/Food Service,3,28,5,251.03,7,1869.09,7.2,7.5,1,22,1,1,1,1,1,0,1,1,Não
+TRM1150,Nordeste,Distribuidor,Pequeno,Doméstico,62,51,1,173.52,6,226.04,15.1,5.5,8,0,1,1,1,0,1,0,1,1,Não
+TRM1151,Norte,Distribuidor,Médio,Doméstico,25,81,12,366.49,3,4840.24,16.4,5.7,4,2,1,0,1,0,0,1,0,0,Sim
+TRM1152,Sul,Varejo Físico,Grande,Doméstico,50,48,34,1061.83,4,44563.89,6.4,9.2,3,0,1,1,1,1,0,0,0,0,Não
+TRM1153,Sudeste,Atacado,Médio,Profissional/Food Service,40,31,11,537.95,6,8722.87,6.6,7.6,3,6,1,1,1,0,1,1,1,0,Não
+TRM1154,Sul,Varejo Físico,Médio,Profissional/Food Service,83,56,17,417.45,5,9105.21,3.9,9.9,2,5,1,1,0,1,1,0,1,0,Não
+TRM1155,Sudeste,Varejo Físico,Pequeno,Doméstico,39,76,4,169.37,4,828.5,12.0,7.0,3,3,1,1,1,0,0,0,1,0,Sim
+TRM1156,Sudeste,Varejo Físico,Grande,Corporativo,61,26,36,1410.82,6,66297.87,14.1,7.7,2,13,1,1,1,0,1,0,1,1,Não
+TRM1157,Sudeste,Marketplace,Pequeno,Doméstico,22,87,5,163.46,4,939.12,5.5,7.9,3,0,1,1,0,0,0,1,0,1,Sim
+TRM1158,Nordeste,Varejo Físico,Pequeno,Corporativo,10,64,6,318.01,5,2335.31,8.3,3.9,6,0,1,1,1,1,0,0,0,1,Sim
+TRM1159,Nordeste,Atacado,Pequeno,Doméstico,54,90,11,195.55,5,2696.2,6.1,7.4,2,0,1,1,1,0,0,1,1,0,Não
+TRM1160,Sul,Distribuidor,Pequeno,Doméstico,9,55,6,224.49,2,1624.0,14.5,7.1,5,2,1,0,1,0,0,0,0,0,Não
+TRM1161,Centro-Oeste,Varejo Físico,Pequeno,Profissional/Food Service,48,175,8,233.53,7,2492.08,10.2,8.6,0,0,1,1,1,1,1,1,1,0,Não
+TRM1162,Sul,Varejo Físico,Pequeno,Doméstico,15,74,7,182.64,1,1283.86,10.7,8.1,4,5,0,0,1,0,0,0,0,0,Não
+TRM1163,Sul,Varejo Físico,Pequeno,Doméstico,37,97,5,149.65,4,821.81,0.0,,6,4,0,1,1,0,1,0,1,0,Sim
+TRM1164,Sudeste,Distribuidor,Médio,Doméstico,84,87,8,420.9,2,3773.86,7.7,8.5,3,0,1,1,0,0,0,0,0,0,Não
+TRM1165,Sudeste,Marketplace,Pequeno,Doméstico,46,50,5,180.42,4,1180.86,16.3,7.0,1,12,1,1,1,0,0,0,1,0,Sim
+TRM1166,Nordeste,Varejo Físico,Pequeno,Profissional/Food Service,27,70,4,180.71,5,1012.81,13.3,6.1,2,5,1,1,1,0,1,0,1,0,Não
+TRM1167,Nordeste,Marketplace,Grande,Corporativo,41,35,33,1332.74,4,52741.21,5.6,,2,14,0,0,0,1,1,1,1,0,Não
+TRM1168,Sudeste,Varejo Físico,Médio,Corporativo,22,166,11,605.56,3,7803.3,6.7,6.1,5,3,0,0,0,1,0,0,1,1,Sim
+TRM1169,Centro-Oeste,Marketplace,Médio,Doméstico,101,80,10,451.26,4,5259.46,3.2,9.1,2,5,1,0,1,0,0,1,1,0,Não
+TRM1170,Sudeste,Atacado,Pequeno,Doméstico,19,29,5,194.95,5,1259.75,14.8,8.1,6,0,1,1,1,0,1,0,1,0,Não
+TRM1171,Sudeste,Marketplace,Grande,Doméstico,29,142,22,850.59,2,20333.98,14.0,6.7,2,5,0,1,1,0,0,0,0,0,Não
+TRM1172,Sul,Distribuidor,Pequeno,Doméstico,44,52,5,195.19,5,1215.82,4.9,8.6,1,11,1,1,1,0,1,1,0,0,Não
+TRM1173,Centro-Oeste,Marketplace,Pequeno,Doméstico,39,106,6,174.1,3,1182.85,,8.2,6,2,1,1,1,0,0,0,0,0,Sim
+TRM1174,Sul,Varejo Físico,Grande,Corporativo,42,12,33,934.29,6,41530.12,2.6,8.9,2,9,0,1,1,1,1,1,0,1,Não
+TRM1175,Sul,Varejo Físico,Médio,Corporativo,23,125,8,593.36,3,5191.4,3.7,8.5,3,0,0,0,0,0,1,1,1,0,Sim
+TRM1176,Sudeste,Varejo Físico,Médio,Profissional/Food Service,27,78,22,606.57,5,16226.22,8.1,8.0,7,11,1,1,1,0,1,0,1,0,Não
+TRM1177,Centro-Oeste,E-commerce,Médio,Doméstico,53,27,17,292.86,5,7016.72,11.4,7.9,2,0,1,1,1,0,0,1,1,0,Não
+TRM1178,Norte,Marketplace,Médio,Doméstico,52,77,11,428.52,4,6768.32,0.2,8.8,4,12,1,1,0,0,0,1,1,0,Não
+TRM1179,Nordeste,Distribuidor,Pequeno,Doméstico,39,155,9,231.36,4,2220.31,6.5,6.4,2,5,0,1,0,0,1,1,0,1,Não
+TRM1180,Norte,Marketplace,Pequeno,Doméstico,65,36,7,155.36,6,1271.33,12.0,7.7,1,17,1,1,1,0,1,1,1,0,Não
+TRM1181,Norte,Varejo Físico,Pequeno,Doméstico,54,36,3,180.07,5,618.57,,9.8,3,0,1,1,1,1,0,0,0,1,Não
+TRM1182,Sudeste,Distribuidor,Pequeno,Doméstico,51,50,7,137.75,5,1185.79,8.9,9.6,1,0,1,1,1,1,1,0,0,0,Não
+TRM1183,Sudeste,Varejo Físico,Grande,Doméstico,9,61,30,1228.26,5,48965.62,13.3,7.4,2,0,1,1,1,0,1,0,1,0,Sim
+TRM1184,Nordeste,Varejo Físico,Pequeno,Corporativo,39,111,5,267.3,7,1903.61,14.9,6.6,4,0,1,1,1,0,1,1,1,1,Não
+TRM1185,Sudeste,Distribuidor,Médio,Doméstico,35,81,18,423.52,5,9583.06,7.1,9.1,3,0,1,1,1,0,1,1,0,0,Não
+TRM1186,Sudeste,Atacado,Médio,Corporativo,70,50,15,732.39,5,14198.89,7.3,8.5,4,10,0,0,0,1,1,1,1,1,Não
+TRM1187,Sul,Distribuidor,Médio,Doméstico,2,72,12,470.01,6,6926.2,11.4,7.8,1,5,1,1,1,0,1,0,1,1,Não
+TRM1188,Nordeste,Varejo Físico,Pequeno,Profissional/Food Service,28,172,5,196.63,4,1137.46,2.7,5.9,6,1,1,1,1,0,0,1,0,0,Sim
+TRM1189,Sul,Distribuidor,Pequeno,Doméstico,33,91,5,159.03,6,1032.03,7.1,7.7,5,2,1,1,1,0,1,1,1,0,Não
+TRM1190,Centro-Oeste,Varejo Físico,Grande,Doméstico,15,54,20,1034.63,5,22406.89,11.2,7.4,3,0,1,1,1,0,0,0,1,1,Sim
+TRM1191,Sul,Atacado,Médio,Doméstico,17,49,13,372.82,4,5187.73,7.4,6.5,6,18,1,1,1,0,0,0,1,0,Sim
+TRM1192,Sul,Distribuidor,Médio,Doméstico,70,69,19,259.94,4,5304.95,11.4,7.4,0,0,1,0,1,0,0,1,1,0,Sim
+TRM1193,Nordeste,Varejo Físico,Grande,Corporativo,41,110,24,1415.9,5,44712.97,15.2,7.3,2,0,1,0,1,1,1,0,0,1,Não
+TRM1194,Sul,Varejo Físico,Médio,Doméstico,84,32,12,308.1,4,4448.33,,7.0,0,11,1,1,1,0,0,0,1,0,Não
+TRM1195,Sul,Varejo Físico,Pequeno,Profissional/Food Service,28,100,9,277.37,7,3560.97,8.5,8.4,3,3,1,1,1,1,1,0,1,1,Não
+TRM1196,Sudeste,Atacado,Médio,Doméstico,11,53,13,433.37,4,5669.51,14.0,9.0,3,21,1,1,1,0,0,0,1,0,Não
+TRM1197,Norte,E-commerce,Pequeno,Doméstico,26,59,6,150.67,4,940.14,4.7,8.6,7,1,1,0,1,0,0,0,1,1,Não
+TRM1198,Sul,Marketplace,Médio,Doméstico,23,264,13,367.18,4,5931.39,8.6,5.2,12,12,1,1,1,0,0,0,1,0,Sim
+TRM1199,Sudeste,Distribuidor,Grande,Doméstico,47,93,20,626.91,3,10921.16,12.2,7.9,6,14,0,1,1,0,1,0,0,0,Não
+TRM1200,Nordeste,Distribuidor,Médio,Corporativo,46,39,8,546.88,3,5380.1,7.7,7.5,6,1,0,0,1,0,0,1,0,1,Sim
+TRM1201,Centro-Oeste,Varejo Físico,Pequeno,Profissional/Food Service,43,78,10,257.93,5,2731.81,1.5,5.6,2,0,1,1,1,0,1,0,1,0,Não
+TRM1202,Sudeste,Atacado,Pequeno,Profissional/Food Service,98,114,2,297.31,5,787.07,13.6,7.8,3,11,1,0,1,1,1,0,1,0,Não
+TRM1203,Sul,E-commerce,Grande,Doméstico,63,94,43,1074.21,4,50630.8,9.9,7.2,5,10,1,1,1,0,0,0,1,0,Sim
+TRM1204,Sul,Distribuidor,Pequeno,Doméstico,18,6,6,177.02,4,1358.47,12.1,10.0,0,0,1,1,1,0,0,0,1,0,Não
+TRM1205,Sul,Distribuidor,Pequeno,Corporativo,55,57,6,256.0,4,2277.66,5.5,9.2,4,0,0,0,1,1,0,1,0,1,Não
+TRM1206,Sul,Distribuidor,Pequeno,Doméstico,32,80,6,149.01,4,863.14,5.5,8.1,4,0,1,1,1,0,0,0,1,0,Não
+TRM1207,Sudeste,Atacado,Pequeno,Doméstico,28,76,8,246.74,3,2333.78,12.9,7.4,1,10,0,1,1,0,0,0,1,0,Não
+TRM1208,Sul,Varejo Físico,Pequeno,Doméstico,68,41,8,173.88,5,1475.38,12.0,7.8,4,3,1,1,0,1,0,0,1,1,Não
+TRM1209,Sudeste,E-commerce,Médio,Profissional/Food Service,17,95,12,684.94,3,9519.89,8.8,5.6,1,4,1,1,1,0,0,0,0,0,Sim
+TRM1210,Nordeste,E-commerce,Pequeno,Profissional/Food Service,53,125,1,270.15,5,329.44,11.0,4.6,9,0,1,1,1,0,1,0,1,0,Sim
+TRM1211,Sudeste,E-commerce,Pequeno,Profissional/Food Service,48,13,4,168.6,5,844.94,6.8,6.7,6,0,1,1,1,0,1,0,1,0,Não
+TRM1212,Sul,Varejo Físico,Pequeno,Profissional/Food Service,17,11,5,203.42,2,999.49,8.0,7.4,4,1,1,0,0,0,0,0,1,0,Sim
+TRM1213,Nordeste,Varejo Físico,Pequeno,Doméstico,9,77,5,158.32,6,1093.34,5.4,4.6,7,0,1,1,1,1,0,0,1,1,Sim
+TRM1214,Nordeste,Varejo Físico,Pequeno,Corporativo,30,100,4,267.41,3,1059.19,11.6,6.2,5,6,1,0,1,0,0,1,0,0,Não
+TRM1215,Nordeste,E-commerce,Médio,Doméstico,1,36,14,415.44,4,7544.78,5.2,7.2,3,10,1,1,1,0,0,0,1,0,Sim
+TRM1216,Sul,E-commerce,Pequeno,Profissional/Food Service,59,7,5,322.08,4,1838.06,13.9,7.5,3,23,1,1,1,0,0,0,1,0,Não
+TRM1217,Sul,Distribuidor,Pequeno,Doméstico,39,58,8,145.1,4,1216.04,6.7,6.5,5,5,0,1,1,0,1,0,1,0,Não
+TRM1218,Centro-Oeste,Distribuidor,Pequeno,Corporativo,69,77,6,277.42,1,1876.9,8.1,6.4,4,14,0,0,0,1,0,0,0,0,Não
+TRM1219,Sudeste,E-commerce,Pequeno,Doméstico,38,47,7,199.97,5,20344.71,11.0,9.7,3,0,1,1,1,0,0,1,1,0,Não
+TRM1220,Sudeste,E-commerce,Pequeno,Doméstico,71,116,8,179.95,3,1858.41,8.1,7.6,1,0,0,1,0,0,0,0,1,1,Não
+TRM1221,Sudeste,Varejo Físico,Pequeno,Doméstico,21,73,6,183.57,2,1281.58,6.8,6.3,6,2,0,1,1,0,0,0,0,0,Sim
+TRM1222,Sudeste,Distribuidor,Grande,Doméstico,43,33,33,771.34,2,25258.66,12.9,,3,0,0,0,0,0,0,1,1,0,Não
+TRM1223,Centro-Oeste,E-commerce,Pequeno,Doméstico,24,36,9,183.45,3,1836.6,11.6,7.4,2,5,1,0,1,0,0,0,1,0,Não
+TRM1224,Sudeste,Varejo Físico,Médio,Profissional/Food Service,29,59,13,563.66,8,10505.92,5.3,6.7,5,0,1,1,1,1,1,1,1,1,Não
+TRM1225,Centro-Oeste,E-commerce,Pequeno,Doméstico,33,44,7,190.61,4,1766.68,7.5,6.4,3,0,1,1,1,0,0,0,1,0,Sim
+TRM1226,Sul,E-commerce,Pequeno,Corporativo,39,11,7,288.47,2,2215.37,8.0,,6,19,0,0,0,1,0,0,0,1,Não
+TRM1227,Sudeste,Varejo Físico,Pequeno,Doméstico,19,69,6,225.77,4,1621.0,11.5,6.7,7,1,1,1,1,0,0,0,1,0,Sim
+TRM1228,Sudeste,Distribuidor,Médio,Profissional/Food Service,41,37,18,595.83,1,10553.44,7.6,5.8,2,0,0,1,0,0,0,0,0,0,Não
+TRM1229,Sul,Distribuidor,Médio,Doméstico,32,42,17,425.39,5,8930.95,15.2,7.5,4,12,1,1,1,0,1,0,1,0,Não
+TRM1230,Sul,Distribuidor,Pequeno,Profissional/Food Service,12,23,6,187.04,3,1388.09,7.4,7.7,2,0,1,1,1,0,0,0,0,0,Não
+TRM1231,Sudeste,Distribuidor,Pequeno,Profissional/Food Service,8,158,5,205.56,4,1213.16,7.0,3.9,5,14,1,0,1,0,1,1,0,0,Sim
+TRM1232,Centro-Oeste,Distribuidor,Pequeno,Doméstico,59,89,3,172.88,5,622.79,7.3,7.1,4,0,0,1,1,1,0,1,0,1,Não
+TRM1233,Sudeste,E-commerce,Pequeno,Corporativo,28,184,3,278.18,5,988.1,2.7,7.5,4,1,1,1,1,1,0,1,0,0,Não
+TRM1234,Centro-Oeste,Marketplace,Médio,Doméstico,11,47,15,383.84,4,6492.99,3.9,8.0,4,8,1,1,1,0,0,0,1,0,Não
+TRM1235,Nordeste,E-commerce,Pequeno,Doméstico,78,93,9,149.68,5,1483.06,5.9,10.0,2,10,1,1,1,0,0,1,1,0,Não
+TRM1236,Sudeste,E-commerce,Pequeno,Profissional/Food Service,44,70,5,186.5,5,11673.45,12.5,8.9,2,11,1,1,1,0,1,0,1,0,Não
+TRM1237,Nordeste,Distribuidor,Grande,Profissional/Food Service,38,34,39,905.15,4,46648.34,12.9,9.4,3,4,1,0,1,1,0,0,1,0,Sim
+TRM1238,Sul,E-commerce,Pequeno,Doméstico,18,46,3,172.39,6,661.21,6.1,10.0,2,9,1,1,1,0,1,1,1,0,Não
+TRM1239,Sul,E-commerce,Pequeno,Doméstico,11,89,5,132.38,3,783.1,12.9,7.9,3,11,0,1,1,0,0,0,1,0,Não
+TRM1240,Nordeste,Distribuidor,Médio,Corporativo,35,23,10,554.36,7,6044.25,14.2,8.1,3,7,1,1,1,1,0,1,1,1,Não
+TRM1241,Nordeste,Atacado,Pequeno,Profissional/Food Service,31,117,3,212.24,5,825.43,13.0,8.2,1,4,1,0,1,0,1,1,1,0,Não
+TRM1242,Sul,Atacado,Pequeno,Corporativo,15,66,8,226.72,4,2112.61,4.6,6.5,3,0,0,0,1,1,1,0,0,1,Não
+TRM1243,Sudeste,E-commerce,Pequeno,Doméstico,14,106,11,192.3,5,2521.95,6.0,7.2,6,10,1,1,1,0,0,0,1,1,Sim
+TRM1244,Sudeste,E-commerce,Grande,Profissional/Food Service,14,77,27,1314.08,5,44632.31,20.3,6.4,4,5,1,1,1,1,0,0,1,0,Sim
+TRM1245,Norte,Marketplace,Pequeno,Doméstico,13,13,1,162.2,2,165.11,9.0,8.0,3,2,1,1,0,0,0,0,0,0,Não
+TRM1246,Sudeste,E-commerce,Pequeno,Corporativo,21,57,5,255.84,2,1125.56,6.9,6.3,5,15,0,0,0,1,0,1,0,0,Não
+TRM1247,Sudeste,Marketplace,Pequeno,Doméstico,38,118,5,197.41,3,1187.06,10.9,5.8,5,0,1,1,0,0,0,0,1,0,Não
+TRM1248,Sudeste,E-commerce,Pequeno,Profissional/Food Service,42,65,7,201.87,5,1786.3,12.0,7.9,2,18,1,1,1,0,1,1,0,0,Não
+TRM1249,Sudeste,Varejo Físico,Médio,Doméstico,31,59,13,360.83,4,5396.12,5.7,7.1,3,5,1,0,1,0,1,0,1,0,Sim
+TRM1250,Sudeste,Varejo Físico,Pequeno,Profissional/Food Service,34,65,6,263.77,7,1986.0,8.9,5.1,7,8,1,1,1,1,0,1,1,1,Não
+TRM1251,Norte,Marketplace,Médio,Profissional/Food Service,43,10,10,591.84,3,5849.16,11.7,5.7,4,2,1,1,1,0,0,0,0,0,Não
+TRM1252,Sudeste,Varejo Físico,Médio,Doméstico,6,127,12,465.48,3,6368.11,3.4,5.2,4,0,0,0,1,0,1,0,0,1,Não
+TRM1253,Sul,Varejo Físico,Médio,Corporativo,36,5,20,699.98,4,18651.79,8.0,6.6,3,4,0,0,1,1,0,0,1,1,Não
+TRM1254,Sul,E-commerce,Pequeno,Doméstico,65,144,6,115.94,6,919.03,3.5,7.3,1,8,1,1,1,1,1,0,1,0,Não
+TRM1255,Nordeste,Varejo Físico,Grande,Profissional/Food Service,28,44,25,1419.01,6,41016.23,9.1,7.9,2,10,1,1,1,0,1,1,1,0,Não
+TRM1256,Nordeste,E-commerce,Médio,Doméstico,58,81,9,449.64,3,4614.0,5.7,8.4,5,3,1,0,0,0,1,0,1,0,Não
+TRM1257,Sul,Marketplace,Pequeno,Doméstico,28,9,4,212.75,4,999.89,9.9,,2,0,1,1,1,0,0,0,1,0,Não
+TRM1258,Sul,Varejo Físico,Médio,Doméstico,45,100,21,449.27,3,11297.25,6.7,8.3,2,0,0,1,1,0,0,0,1,0,Não
+TRM1259,Sudeste,Marketplace,Grande,Doméstico,38,88,35,958.37,4,41501.87,10.4,7.9,4,21,1,1,1,0,0,1,0,0,Não
