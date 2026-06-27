@@ -329,7 +329,7 @@
           <span class="chip">SQL · NoSQL</span>
           <span class="chip">Pré-processamento</span>
           <span class="chip">LGPD</span>
-          <span class="chip">SMOTE · leakage</span>
+          <span class="chip">SMOTE · sintéticos</span>
         </div>
         <div class="spacer"></div>
         <a class="dl" href="Slides/1 - Data Mining.pdf" download>
@@ -346,14 +346,14 @@
           <span class="day-when">27/06 · 8h–12h</span>
         </div>
         <h3>Machine Learning</h3>
-        <p>Como as máquinas aprendem: tipos de aprendizado, modelos supervisionados (k-NN, árvores, regressões), avaliação e validação, e aprendizado não-supervisionado.</p>
+        <p>Como as máquinas aprendem: tipos de aprendizado, modelos supervisionados (k-NN, árvores, regressões), avaliação e validação, não-supervisionado e uma introdução a Deep Learning.</p>
         <div class="chips">
           <span class="chip">Supervisionado</span>
           <span class="chip">k-NN · árvores</span>
-          <span class="chip">Viés × variância</span>
-          <span class="chip">Métricas · ROC</span>
-          <span class="chip">k-Means · PCA</span>
-          <span class="chip">Regras de associação</span>
+          <span class="chip">Regressões · ensembles</span>
+          <span class="chip">Métricas · AUC</span>
+          <span class="chip">k-Means</span>
+          <span class="chip">Redes neurais · DL</span>
         </div>
         <div class="spacer"></div>
         <a class="dl" href="Slides/2 - Machine Learning.pdf" download>
@@ -645,22 +645,23 @@
       <div class="agenda-card">
         <div class="lbl"><b>Dia 1 — Data Mining</b><span class="h">6h</span></div>
         <ul class="timeline">
-          <li><span class="t">Bloco 1</span><span class="topic"><b>O que é Data Mining</b><span>Processos (KDD, CRISP-DM, SEMMA) e o fluxo de um projeto</span></span></li>
-          <li><span class="t">Bloco 2</span><span class="topic"><b>Dados e estatística descritiva</b><span>Tipos de dados, tendência central, dispersão, correlação</span></span></li>
-          <li><span class="t">Bloco 3</span><span class="topic"><b>Armazenamento</b><span>SQL, NoSQL, vetorial; warehouse × lake; formatos</span></span></li>
-          <li><span class="t">Bloco 4</span><span class="topic"><b>Pré-processamento</b><span>Limpeza, transformação, LGPD, redução de dimensionalidade</span></span></li>
-          <li><span class="t">Bloco 5</span><span class="topic"><b>Amostragem e dados sintéticos</b><span>Desbalanceamento, SMOTE, data leakage</span></span></li>
-          <li><span class="t">Prática</span><span class="topic"><b>Orange · Exploração</b><span>Pipeline completo de exploração da base</span></span></li>
+          <li><span class="t">Módulo 1</span><span class="topic"><b>O que é Data Mining</b><span>Definições, KDD · CRISP-DM · SEMMA e o fluxo de um projeto</span></span></li>
+          <li><span class="t">Módulo 2</span><span class="topic"><b>Dados e estatística descritiva</b><span>Tipos de atributos, medidas de centro e dispersão, distribuição, covariância e correlação</span></span></li>
+          <li><span class="t">Módulo 3</span><span class="topic"><b>Armazenamento</b><span>Bancos relacionais (SQL), NoSQL, vetorial (embeddings/RAG) e formatos</span></span></li>
+          <li><span class="t">Módulo 4</span><span class="topic"><b>Pré-processamento</b><span>Limpeza (ausentes, duplicatas, outliers), LGPD, transformações e redução de dimensionalidade</span></span></li>
+          <li><span class="t">Módulo 5</span><span class="topic"><b>Amostragem e geração de dados</b><span>Amostragem estratificada, desbalanceamento, SMOTE e dados sintéticos</span></span></li>
+          <li><span class="t">Prática</span><span class="topic"><b>Orange · Exploração</b><span>Pipeline completo de exploração e preparo da base</span></span></li>
         </ul>
       </div>
 
       <div class="agenda-card">
         <div class="lbl"><b>Dia 2 — Machine Learning</b><span class="h">4h</span></div>
         <ul class="timeline">
-          <li><span class="t">Bloco 1</span><span class="topic"><b>O que é Machine Learning</b><span>Tipos de aprendizado, fluxo clássico, modelo × algoritmo</span></span></li>
-          <li><span class="t">Bloco 2</span><span class="topic"><b>Aprendizado supervisionado</b><span>k-NN, árvores, regressões, viés × variância</span></span></li>
-          <li><span class="t">Bloco 3</span><span class="topic"><b>Avaliação e validação</b><span>Treino/teste, validação cruzada, métricas, ROC</span></span></li>
-          <li><span class="t">Bloco 4</span><span class="topic"><b>Não-supervisionado</b><span>k-Means, hierárquico, regras de associação, PCA</span></span></li>
+          <li><span class="t">Módulo 1</span><span class="topic"><b>O que é Machine Learning</b><span>Definição, tipos de aprendizado, fluxo clássico, modelo × algoritmo e IA/ML/DL</span></span></li>
+          <li><span class="t">Módulo 2</span><span class="topic"><b>Aprendizado supervisionado</b><span>k-NN, árvores, regressões linear e logística, e ensembles</span></span></li>
+          <li><span class="t">Módulo 3</span><span class="topic"><b>Avaliação e validação</b><span>Treino/validação/teste, validação cruzada, matriz de confusão, métricas e AUC</span></span></li>
+          <li><span class="t">Módulo 4</span><span class="topic"><b>Não-supervisionado</b><span>k-Means, escolha de k (cotovelo/silhueta) e regras de associação</span></span></li>
+          <li><span class="t">Módulo 5</span><span class="topic"><b>Redes neurais e Deep Learning</b><span>Neurônio artificial, redes profundas, CNNs e Transformers</span></span></li>
           <li><span class="t">Prática</span><span class="topic"><b>Orange · Modelagem</b><span>Classificação comparada e clustering</span></span></li>
         </ul>
       </div>
