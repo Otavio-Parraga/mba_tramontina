@@ -163,6 +163,11 @@
     font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;
     color:var(--muted-soft);border:1px dashed var(--line);border-radius:999px;padding:3px 9px;margin-left:auto;
   }
+  .badge-new{
+    font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green);background:#eaf4ef;border:1px solid #cfe6db;border-radius:999px;
+    padding:2px 8px;margin-left:8px;vertical-align:middle;font-weight:500;
+  }
   .panel-note{padding:14px 24px;background:#f6f4ef;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
   .panel-note code{font-family:'JetBrains Mono';font-size:11.5px;background:#ece8df;padding:1px 6px;border-radius:5px;color:var(--navy)}
   /* notebook row with two actions (Colab + download) */
@@ -208,6 +213,57 @@
   .biblio .ref{break-inside:avoid;font-size:13.5px;color:var(--muted);padding:9px 0;border-bottom:1px solid var(--line)}
   .biblio .ref b{color:var(--navy);font-weight:600}
 
+  /* ---------- exemplos / external links ---------- */
+  .exlink{
+    display:flex;gap:18px;text-decoration:none;
+    background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .exlink:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(15,41,66,.45);border-color:#d8d2c4}
+  .ex-ic{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;flex:none}
+  .ex-body{display:flex;flex-direction:column;min-width:0}
+  .ex-name{font-family:'Space Grotesk';font-weight:700;font-size:18px;color:var(--navy);display:flex;align-items:center;gap:7px}
+  .ex-name .ext{color:var(--muted-soft);flex:none}
+  .exlink:hover .ex-name .ext{color:var(--gold)}
+  .ex-desc{font-size:14px;color:var(--muted);margin-top:7px}
+  .ex-url{font-family:'JetBrains Mono';font-size:11.5px;color:var(--gold);margin-top:12px}
+
+  /* sub-head dentro de exemplos */
+  .subhead{margin:44px 0 22px}
+  .sub-kicker{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+  .subhead h3{font-family:'Space Grotesk';font-weight:700;font-size:clamp(20px,2.6vw,25px);color:var(--navy);letter-spacing:-.01em}
+  .subhead p{color:var(--muted);max-width:58ch;margin-top:8px;font-size:14.5px}
+
+  /* card em destaque (navy) */
+  .exfeat{
+    display:flex;gap:18px;text-decoration:none;align-items:flex-start;
+    background:var(--navy);border:1px solid var(--navy);border-radius:var(--radius);
+    padding:24px 26px;margin-bottom:22px;transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .exfeat:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(15,41,66,.6)}
+  .exfeat .ext{color:#9fb2c2;flex:none}
+  .exfeat:hover .ext{color:var(--gold-soft)}
+
+  /* grid dos algoritmos */
+  .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:860px){.exgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.exgrid{grid-template-columns:1fr}}
+  .excard{
+    display:flex;flex-direction:column;text-decoration:none;
+    background:var(--paper-card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .excard:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(15,41,66,.45);border-color:#d8d2c4}
+  .ec-ic{
+    width:44px;height:44px;border-radius:11px;display:grid;place-items:center;
+    background:#fbf0db;color:var(--gold);font-family:'Space Grotesk';font-weight:700;font-size:15px;
+    margin-bottom:14px;
+  }
+  .ec-name{font-family:'Space Grotesk';font-weight:700;font-size:15.5px;color:var(--navy);display:flex;align-items:center;gap:6px}
+  .ec-name .ext{color:var(--muted-soft);flex:none}
+  .excard:hover .ec-name .ext{color:var(--gold)}
+  .ec-desc{font-size:13px;color:var(--muted);margin-top:7px}
+
   /* ---------- footer ---------- */
   footer{background:var(--navy-deep);color:#9fb2c2;padding:48px 0 40px;font-size:13.5px}
   footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
@@ -229,6 +285,7 @@
       <a href="instalacao-orange.html">Instalar Orange</a>
       <a href="#notebooks">Notebooks</a>
       <a href="#roteiros">Roteiros</a>
+      <a href="#exemplos">Exemplos</a>
       <a href="#agenda">Agenda</a>
     </nav>
   </div>
@@ -299,11 +356,11 @@
           <span class="chip">Regras de associação</span>
         </div>
         <div class="spacer"></div>
-        <span class="dl soon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          Deck · Dia 2
-          <span class="meta">em breve</span>
-        </span>
+        <a class="dl" href="Slides/2 - Machine Learning.pdf" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Baixar deck · Dia 2
+          <span class="meta">PDF · 3.6 MB</span>
+        </a>
       </article>
     </div>
   </div>
@@ -371,9 +428,17 @@
           </div>
         </div>
         <ul class="reslist">
+          <li><a class="res" href="Orange/DataMiningAoVivo.ows" download>
+            <span>
+              <span class="name">Dia 1 · Data Mining <span class="badge-new">feito em aula</span></span>
+              <span class="desc">Pipeline montado ao vivo: File → Edit Domain → Impute → Select Rows → Preprocess, com Box Plot, Distributions, Scatter e Column Statistics</span>
+            </span>
+            <span class="file">.ows</span>
+            <svg class="dlicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </a></li>
           <li><a class="res" href="Orange/DataMining.ows" download>
             <span>
-              <span class="name">Dia 1 · Data Mining</span>
+              <span class="name">Dia 1 · Data Mining (referência)</span>
               <span class="desc">Exploração: File → Data Table → Distributions, Scatter, Preprocess, Sampler</span>
             </span>
             <span class="file">.ows</span>
@@ -420,12 +485,21 @@
             </a>
           </span>
         </div></li>
-        <li><div class="res pending">
+        <li><div class="res row2">
           <span>
             <span class="name">02 · Treinamento de modelos</span>
             <span class="desc">Classificação, avaliação (ROC, métricas) e clustering — Dia 2</span>
           </span>
-          <span class="badge-soon">a publicar</span>
+          <span class="res-actions">
+            <a class="act colab" href="https://colab.research.google.com/drive/1W12gEzRPwPHvPYZFjIy4fHMZx3hWE2d1?usp=sharing" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Colab
+            </a>
+            <a class="act dl-csv" href="Notebooks/02_Treinamento_de_Modelos.ipynb" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              .ipynb
+            </a>
+          </span>
         </div></li>
       </ul>
       <div class="panel-note">Abra direto no <b>Google Colab</b> (sem instalar nada) ou baixe o <code>.ipynb</code> para rodar no Jupyter/VS Code. Os dados estão em <code>Dados/</code>.</div>
@@ -478,6 +552,82 @@
           Abrir manual de instalação do Orange
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXEMPLOS / RECURSOS ============ -->
+<section id="exemplos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Para explorar</div>
+      <h2>Exemplos e recursos</h2>
+      <p>Sites e demonstrações interativas para fixar as ideias da aula: como escolher a visualização certa, por que <b>correlação não é causalidade</b> e como cada algoritmo de Machine Learning funciona por dentro.</p>
+    </div>
+
+    <div class="grid2">
+      <a class="exlink" href="https://www.data-to-viz.com/" target="_blank" rel="noopener">
+        <span class="ex-ic" style="background:#eaf4ef;color:var(--green)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+        </span>
+        <span class="ex-body">
+          <span class="ex-name">From Data to Viz <svg class="ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+          <span class="ex-desc">Um guia que parte do tipo dos seus dados e recomenda o gráfico mais adequado — com exemplos, armadilhas comuns e código.</span>
+          <span class="ex-url">data-to-viz.com</span>
+        </span>
+      </a>
+
+      <a class="exlink" href="https://www.tylervigen.com/spurious-correlations" target="_blank" rel="noopener">
+        <span class="ex-ic" style="background:#fbf0db;color:var(--gold)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M6 15c3-7 9 5 13-7"/><path d="M6 9c3 7 9-5 13 7"/></svg>
+        </span>
+        <span class="ex-body">
+          <span class="ex-name">Spurious Correlations <svg class="ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+          <span class="ex-desc">Coleção do Tyler Vigen com correlações absurdas e altíssimas entre variáveis sem nenhuma relação real. O lembrete perfeito de que correlação ≠ causalidade.</span>
+          <span class="ex-url">tylervigen.com/spurious-correlations</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- ML interativo -->
+    <div class="subhead">
+      <span class="sub-kicker">Machine Learning interativo · Dia 2</span>
+      <h3>Como cada algoritmo aprende</h3>
+      <p>Demonstrações visuais que você mexe no navegador — ajuste os parâmetros e veja o modelo reagir em tempo real.</p>
+    </div>
+
+    <a class="exfeat" href="https://otavio-parraga.github.io/course_materials/aprendizado-maquina/index.html" target="_blank" rel="noopener">
+      <span class="ex-ic" style="background:rgba(224,160,64,.18);color:var(--gold-soft)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+      </span>
+      <span class="ex-body">
+        <span class="ex-name" style="color:#fff">Aprendizado de Máquina — visão geral <svg class="ext" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        <span class="ex-desc" style="color:#c4d2de">Página inicial das demonstrações: começa por aqui para entender os conceitos antes de explorar cada algoritmo.</span>
+        <span class="ex-url" style="color:var(--gold-soft)">otavio-parraga.github.io/course_materials/aprendizado-maquina</span>
+      </span>
+    </a>
+
+    <div class="exgrid">
+      <a class="excard" href="https://otavio-parraga.github.io/course_materials/examples/MachineLearning/KNN/index.html" target="_blank" rel="noopener">
+        <span class="ec-ic">k-NN</span>
+        <span class="ec-name">k-Nearest Neighbors <svg class="ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        <span class="ec-desc">Classificação pelos vizinhos mais próximos — veja o efeito do <i>k</i>.</span>
+      </a>
+      <a class="excard" href="https://otavio-parraga.github.io/course_materials/examples/MachineLearning/DecisionTree/index.html" target="_blank" rel="noopener">
+        <span class="ec-ic">🌳</span>
+        <span class="ec-name">Árvore de Decisão <svg class="ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        <span class="ec-desc">Como os cortes dividem os dados e onde mora o sobreajuste.</span>
+      </a>
+      <a class="excard" href="https://otavio-parraga.github.io/course_materials/examples/MachineLearning/RegressaoLinear/index.html" target="_blank" rel="noopener">
+        <span class="ec-ic">📈</span>
+        <span class="ec-name">Regressão Linear <svg class="ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        <span class="ec-desc">Ajuste da reta aos pontos e o papel do erro (mínimos quadrados).</span>
+      </a>
+      <a class="excard" href="https://otavio-parraga.github.io/course_materials/examples/MachineLearning/RandomForest/index.html" target="_blank" rel="noopener">
+        <span class="ec-ic">🌲</span>
+        <span class="ec-name">Random Forest <svg class="ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        <span class="ec-desc">Várias árvores votando juntas: o ganho do <i>ensemble</i>.</span>
+      </a>
     </div>
   </div>
 </section>
